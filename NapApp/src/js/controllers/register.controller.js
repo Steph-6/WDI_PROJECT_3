@@ -8,7 +8,8 @@ function RegisterCtrl(User){
 
   vm.register = () => {
     console.log('registering');
-    User.register(vm.user)
+    User
+      .register(vm.user)
       .$promise
       .then(data => {
         console.log(data);
