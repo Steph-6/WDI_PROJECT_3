@@ -2,8 +2,8 @@ angular
   .module('napApp')
   .controller('RegisterCtrl', RegisterCtrl);
 
-RegisterCtrl.$inject = ['User', 'TokenService'];
-function RegisterCtrl(User, TokenService){
+RegisterCtrl.$inject = ['User', 'TokenService', 'CurrentUserService'];
+function RegisterCtrl(User, TokenService, CurrentUserService){
   const vm = this;
 
   vm.register = () => {
@@ -11,9 +11,8 @@ function RegisterCtrl(User, TokenService){
     User
       .register(vm.user)
       .$promise
-      .then(data => {
-        console.log(data);
-        TokenService.setToken(data.token);
+      .then(() => {
+        CurrentUserService.getUser();
       }, err => {
         console.log(err);
       });

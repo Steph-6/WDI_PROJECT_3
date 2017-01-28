@@ -2,15 +2,16 @@ angular
   .module('napApp')
   .controller('LoginCtrl', LoginCtrl);
 
-LoginCtrl.$inject = ['User'];
-function LoginCtrl(User) {
+LoginCtrl.$inject = ['User','CurrentUserService'];
+function LoginCtrl(User, CurrentUserService) {
   const vm = this;
 
   vm.login = () => {
-    User.login(vm.user)
+    User
+      .login(vm.user)
       .$promise
-      .then(data => {
-        console.log(data);
+      .then(() => {
+        CurrentUserService.getUser();
       }, err => {
         console.log(err);
       });
