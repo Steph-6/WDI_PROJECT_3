@@ -1,6 +1,6 @@
 angular
-  .module("napApp", [
-    "ui.router",
-    "ngResource",
-    "angular-jwt"
+  .module('napApp', [
+    'ui.router',
+    'ngResource',
+    'angular-jwt'
   ]);
