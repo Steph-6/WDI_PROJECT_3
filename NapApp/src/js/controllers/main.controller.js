@@ -1,5 +1,5 @@
 angular
-  .module('angularAuthentication')
+  .module('napApp')
   .controller('MainCtrl', MainCtrl);
 
 MainCtrl.$inject = [];

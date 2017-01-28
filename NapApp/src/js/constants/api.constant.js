@@ -1,3 +1,3 @@
 angular
-  .module('angularAuthentication')
+  .module('napApp')
   .constant('API', `${window.location.origin}/api`);

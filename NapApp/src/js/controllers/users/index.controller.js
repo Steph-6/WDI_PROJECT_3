@@ -1,5 +1,5 @@
 angular
-  .module('angularAuthentication')
+  .module('napApp')
   .controller('UsersIndexCtrl', UsersIndexCtrl);
 
 UsersIndexCtrl.$inject = ['User'];

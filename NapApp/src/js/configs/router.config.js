@@ -1,5 +1,5 @@
 angular
-  .module('angularAuthentication')
+  .module('napApp')
   .config(Router);
 
 Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];

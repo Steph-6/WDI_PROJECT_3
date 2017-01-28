@@ -1,5 +1,5 @@
 angular
-  .module("angularAuthentication", [
+  .module("napApp", [
     "ui.router",
     "ngResource",
     "angular-jwt"
