@@ -7,7 +7,6 @@ function RegisterCtrl(User, TokenService, CurrentUserService){
   const vm = this;
 
   vm.register = () => {
-    console.log('registering');
     User
       .register(vm.user)
       .$promise
