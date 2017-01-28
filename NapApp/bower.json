@@ -1,6 +1,6 @@
 {
-  "name": "angular-authentication-lesson",
-  "description": "An authenticated app with Angular and Express.",
+  "name": "nap-app",
+  "description": "Sleepy time...",
   "main": "index.js",
   "authors": [
     "alexpchin <alex@alexchin.co.uk>"
