@@ -7,25 +7,22 @@ const dreams          = require('../controllers/dreams');
 
 router.route('/register')
   .post(authentications.register);
-
 router.route('/login')
   .post(authentications.login);
 
 router.route('/users')
   .get(users.index);
-
 router.route('/users/:id')
   .get(users.show)
   .put(users.update)
   .delete(users.delete);
-
-router.route('/users/:id/dreams')
-.post(dreams.create);
-
+router.route('/dreams')
+  .post(authentications.assign, dreams.create);
 router.route('/dreams/:id')
-.get(dreams.show)
-.patch(dreams.update)
-.put(dreams.update)
-.delete(dreams.delete);
+  .get(dreams.show)
+  .patch(dreams.update)
+  .put(dreams.update)
+  .delete(dreams.delete);
+
 
 module.exports = router;
