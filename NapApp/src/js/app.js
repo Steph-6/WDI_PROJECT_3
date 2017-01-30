@@ -2,5 +2,6 @@ angular
   .module('napApp', [
     'ui.router',
     'ngResource',
-    'angular-jwt'
+    'angular-jwt',
+    'satellizer'
   ]);
