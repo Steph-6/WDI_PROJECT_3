@@ -23,6 +23,9 @@ router.route('/users/:id/dreams')
 .post(dreams.create);
 
 router.route('/dreams/:id')
-.get(dreams.show);
+.get(dreams.show)
+.patch(dreams.update)
+.put(dreams.update)
+.delete(dreams.delete);
 
 module.exports = router;
