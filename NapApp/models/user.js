@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   image: { type: String, trim: true },
   email: { type: String, unique: true, trim: true, required: true },
   passwordHash: { type: String, required: true },
-  dreamEntry: [{ type: mongoose.Schema.ObjectId, ref: 'Dream' }]
+  dreams: [{ type: mongoose.Schema.ObjectId, ref: 'Dream' }]
 });
 
 userSchema

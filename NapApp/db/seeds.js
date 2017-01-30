@@ -9,10 +9,12 @@ const Dream     = require('../models/dream');
 
 mongoose.connect(config.db);
 
-User.collection.drop();
-Dream.collection.drop();
-
 async.waterfall([
+  function dropCollections(done) {
+    User.collection.drop();
+    Dream.collection.drop();
+    return done(null);
+  },
   function userCreate(done) {
     const user = new User({
       username: 'Jos',
@@ -32,19 +34,13 @@ async.waterfall([
   }, function dreamCreate(user, done) {
     const dream1 = new Dream({
       entry: 'i dreamed about a tiger.....',
-      date: '29/01/2017'
+      date: new Date(),
+      user: user._id
     });
     dream1.save((err, dream) => {
       if (err) return done(err);
       console.log(`${dream.entry} was created`);
       return done(null, user, dream);
-    });
-  }, function AddDreamToUser(user, dream, done) {
-    user.dreamEntry.addToSet(dream);
-    user.save((err, user) => {
-      if (err) return done(err);
-      console.log(`${dream.entry} was added to ${user.username}`);
-      return done(null, dream);
     });
   }
 ], function (err) {

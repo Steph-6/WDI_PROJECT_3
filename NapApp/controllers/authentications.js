@@ -1,6 +1,7 @@
 module.exports = {
   register: authenticationsRegister,
-  login: authenticationsLogin
+  login: authenticationsLogin,
+  assign: assign
 };
 
 const User   = require('../models/user');
@@ -35,5 +36,20 @@ function authenticationsLogin(req, res){
       user,
       token
     });
+  });
+}
+
+function assign(req, res, next) {
+  const token = req.headers.authorization.split(' ')[1];
+  jwt.verify(token, config.secret, (err, decoded) => {
+    if (err) return res.status(500).json({ message: 'Invalid JWT token.' });
+    User
+      .findById(decoded.id, (err, user) => {
+        if (err) return res.status(500).json({ message: 'Invalid JWT token.' });
+        if (!user) return res.status(500).json({ message: 'No user found.' });
+        // Assign the user to the request
+        req.user = user;
+        next();
+      });
   });
 }

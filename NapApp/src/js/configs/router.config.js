@@ -30,7 +30,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controllerAs: 'usersIndex'
   })
   .state('dreamsIndex', {
-    url: '/dreams',
+    url: '/users/:id',
     templateUrl: '/js/views/dreams/index.html',
     controller: 'DreamsIndexCtrl',
     controllerAs: 'dreamsIndex'
