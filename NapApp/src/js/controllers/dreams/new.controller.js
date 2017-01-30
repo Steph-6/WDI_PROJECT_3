@@ -4,9 +4,10 @@ angular
 
 DreamsNewCtrl.$inject = ['$state','User','CurrentUserService'];
 function DreamsNewCtrl($state, User, CurrentUserService) {
-  const vm  = this;
-  vm.user   = CurrentUserService.currentUser;
-  vm.today  = new Date();
+  const vm     = this;
+  vm.user      = CurrentUserService.currentUser;
+  const today  = new Date();
+  vm.today     = today.toDateString();
 
   vm.dreamsCreate = function dreamsCreate(){
     console.log('creating dreams');
@@ -18,9 +19,3 @@ function DreamsNewCtrl($state, User, CurrentUserService) {
     //    });
   };
 }
-//
-// return $http
-//       .post(`${API}/users`, vm.user)
-//       .then(() => {
-//         $state.go('usersIndex');
-//       });
