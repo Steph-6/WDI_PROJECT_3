@@ -2,12 +2,20 @@ angular
   .module('napApp')
   .controller('DreamsNewCtrl', DreamsNewCtrl);
 
-DreamsNewCtrl.$inject = ['$http', 'API', '$state','User','CurrentUserService'];
-function DreamsNewCtrl(http, API, $state, User, CurrentUserService) {
+DreamsNewCtrl.$inject = ['$state','User','CurrentUserService'];
+function DreamsNewCtrl($state, User, CurrentUserService) {
   const vm  = this;
-  vm.user = CurrentUserService.currentUser;
+  vm.user   = CurrentUserService.currentUser;
+  vm.today  = new Date();
+
   vm.dreamsCreate = function dreamsCreate(){
-    
+    console.log('creating dreams');
+    // return User
+    //   .save(vm.user)
+    //   .$promise
+    //   .then(() => {
+    //     $state.go('usersIndex');
+    //    });
   };
 }
 //
