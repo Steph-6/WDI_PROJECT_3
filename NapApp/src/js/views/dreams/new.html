@@ -9,15 +9,14 @@
     <label>What did you dream?</label>
     <input type="text" class="form-control" id="image" placeholder="What did you dream?" ng-model="dreamsNew.dream.entry">
   </div>
+  <h3>Total Amount of Sleep</h3>
+  <p ng-model="dreamsNew.dream.totalSleep">{{dreamsNew.totalSleep}}</p>
+  <h3>Number of Sleeps</h3>
+  <p ng-model="dreamsNew.dream.noSleeps">{{dreamsNew.noOfSleeps}}</p>
+  <h3>Total Time in Bed</h3>
+  <p ng-model="dreamsNew.dream.timeInBed">{{dreamsNew.timeInBed}}</p>
 
   <input type="submit" class="btn btn-default" value="Add Dream">
 </form>
 
-<button type="button" ng-click="dreamsNew.authenticate('fitbit')" name="button">Authenticate!</button>
-
-<h3>Total Amount of Sleep</h3>
-<p>{{dreamsNew.totalSleep}}</p>
-<h3>Number of Sleeps</h3>
-<p>{{dreamsNew.noOfSleeps}}</p>
-<h3>Total Time in Bed</h3>
-<p>{{dreamsNew.timeInBed}}</p>
+<button type="button" ng-click="dreamsNew.authenticate('fitbit')" name="button">Get FitBit Data</button>
