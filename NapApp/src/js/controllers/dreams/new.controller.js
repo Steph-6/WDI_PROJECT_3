@@ -11,7 +11,7 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http) {
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
-    .save({ dream: vm.dream })
+    .save({ dream: { entry: vm.dream.entry, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed }})
     .$promise
     .then(dream => {
       console.log(dream);
