@@ -1,5 +1,8 @@
-
-
-<h2>{{ dreamsShow.dream.date }}</h2>
-
+<h2>Date: {{ dreamsShow.dream.date }}</h2>
 <h4>{{ dreamsShow.dream.entry }}</h4>
+<h4>Total Sleep: {{ dreamsShow.dream.totalSleep }}</h4>
+<h4>Number of Sleeps: {{ dreamsShow.dream.noSleeps }}</h4>
+<h4>Time in Bed: {{ dreamsShow.dream.timeInBed }}</h4>
+<ul>
+  <a ng-click="dreamsShow.delete({id: dreams._id})">Delete</a>
+</ul>
