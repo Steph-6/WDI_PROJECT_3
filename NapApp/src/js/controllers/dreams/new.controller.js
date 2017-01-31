@@ -30,7 +30,6 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
     .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed }})
     .$promise
     .then(dream => {
-      console.log(dream);
       $state.go('dreamsIndex');
     });
   };
@@ -53,10 +52,12 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
       headers: {'Authorization': `Bearer ${vm.access}`}
     })
     .then(response => {
-      console.log(response);
       vm.totalSleep = response.data.summary.totalMinutesAsleep;
       vm.noOfSleeps = response.data.summary.totalSleepRecords;
       vm.timeInBed = response.data.summary.totalTimeInBed;
     });
   };
+
+  vm.slider = $('#slider').attr('data-slider');
+  console.log(vm.slider);
 }

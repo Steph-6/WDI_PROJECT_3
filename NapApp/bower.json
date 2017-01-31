@@ -28,7 +28,8 @@
       "main": [
         "css/normalize.css",
         "css/foundation.css",
-        "js/foundation.js"
+        "js/foundation.js",
+        "js/foundation/foundation.slider.js"
       ]
     },
     "jquery.ripples": {
