@@ -52,6 +52,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: '/js/views/dreams/show.html',
     controller: 'DreamsShowCtrl',
     controllerAs: 'dreamsShow'
+  })
+  .state('moodboard', {
+    url: '/dreams/moodboard',
+    templateUrl: '/js/views/dreams/moodboard.html',
+    controller: 'MoodboardCtrl',
+    controllerAs: 'Moodboard'
   });
 
   $urlRouterProvider.otherwise('/');
