@@ -17,8 +17,13 @@ router.route('/users/:id')
   .put(users.update)
   .delete(users.delete);
 router.route('/dreams')
+  .get(dreams.index)
   .post(authentications.assign, dreams.create);
 router.route('/dreams/:id')
-  .get(dreams.show);
+  .get(dreams.show)
+  .patch(dreams.update)
+  .put(dreams.update)
+  .delete(dreams.delete);
+
 
 module.exports = router;

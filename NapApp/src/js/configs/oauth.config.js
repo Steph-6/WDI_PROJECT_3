@@ -9,11 +9,11 @@ function oauth($authProvider) {
     name: 'fitbit',
     url: 'http://localhost:7000/login',
     clientId: '2284H4',
-    requiredUrlParams: ['scope'],
+    requiredUrlParams: ['scope', 'display'],
     responseType: 'token',
-    redirectUri: 'http://localhost:7000/dreams',
+    redirectUri: 'http://localhost:7000/login',
     scopeDelimiter: ' ',
-    scope: ['sleep'],
+    scope: ['sleep', 'activity', 'nutrition', 'heartrate', 'location'],
     authorizationEndpoint: 'https://www.fitbit.com/oauth2/authorize'
   });
 }

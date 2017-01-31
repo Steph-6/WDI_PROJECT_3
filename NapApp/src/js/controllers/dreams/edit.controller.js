@@ -1,19 +1,27 @@
 angular
-  .module('napApp')
-  .controller('DreamsEditCtrl', DreamsEditCtrl);
+.module('napApp')
+.controller('DreamsEditCtrl', DreamsEditCtrl);
 
-DreamsEditCtrl.$inject = ['$state','User', 'CurrentUserService'];
-function DreamsEditCtrl($state, User, CurrentUserService) {
+DreamsEditCtrl.$inject = ['$state','Dream', 'CurrentUserService', '$stateParams'];
+function DreamsEditCtrl($state, Dream, CurrentUserService, $stateParams) {
   const vm  = this;
-  vm.user   = CurrentUserService.currentUser;
+
+  Dream
+  .get($stateParams)
+  .$promise
+  .then(data => {
+    vm.dream = data;
+  });
+
 
   vm.dreamsUpdate = function dreamsUpdate() {
-    console.log('updating dream');
-    // User
-    //   .update({ id: ???.id }, vm.user)
-    //   .$promise
-    //   .then(() => {
-    //     $state.go('usersIndex');
-    //   });
+    console.log(vm.dream);
+    Dream
+    .update($stateParams, vm.dream)
+    .$promise
+    .then(data => {
+      console.log(data);
+      $state.go('dreamsIndex');
+    });
   };
 }
