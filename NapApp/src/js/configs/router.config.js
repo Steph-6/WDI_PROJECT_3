@@ -29,17 +29,17 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'UsersIndexCtrl',
     controllerAs: 'usersIndex'
   })
-  .state('dreamsIndex', {
-    url: '/dreams',
-    templateUrl: '/js/views/dreams/index.html',
-    controller: 'DreamsIndexCtrl',
-    controllerAs: 'dreamsIndex'
-  })
   .state('dreamsNew', {
     url: '/dreams/new',
     templateUrl: '/js/views/dreams/new.html',
     controller: 'DreamsNewCtrl',
     controllerAs: 'dreamsNew'
+  })
+  .state('dreamsIndex', {
+    url: '/dreams',
+    templateUrl: '/js/views/dreams/index.html',
+    controller: 'DreamsIndexCtrl',
+    controllerAs: 'dreamsIndex'
   })
   .state('dreamsEdit', {
     url: '/dreams/:id/edit',
