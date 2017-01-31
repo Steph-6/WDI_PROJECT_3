@@ -2,8 +2,8 @@ angular
 .module('napApp')
 .controller('LoginCtrl', LoginCtrl);
 
-LoginCtrl.$inject = ['User', 'CurrentUserService', '$auth', '$http'];
-function LoginCtrl(User, CurrentUserService, $auth, $http) {
+LoginCtrl.$inject = ['User', 'CurrentUserService', '$auth', '$http', '$state'];
+function LoginCtrl(User, CurrentUserService, $auth, $http, $state) {
   const vm = this;
 
   vm.authenticate = function(provider) {
@@ -23,6 +23,7 @@ function LoginCtrl(User, CurrentUserService, $auth, $http) {
     .$promise
     .then(() => {
       CurrentUserService.getUser();
+      $state.go('dreamsIndex');
     }, err => {
       console.log(err);
     });

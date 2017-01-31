@@ -2,7 +2,7 @@ const mongoose  = require('mongoose');
 
 const dreamSchema = new mongoose.Schema({
   entry: { type: String, trim: true, required: true },
-  date: { type: Date, trim: true },
+  date: { type: String, trim: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   totalSleep: { type: Number, trim: true },
   noSleeps: { type: Number, trim: true },
