@@ -33,7 +33,7 @@ async.waterfall([
       });
   }, function dreamCreate(user, done) {
     const dream1 = new Dream({
-      entry: 'i dreamed about a tiger.....',
+      entry: 'i dreamed about a fish.....',
       date: new Date(),
       user: user._id
     });

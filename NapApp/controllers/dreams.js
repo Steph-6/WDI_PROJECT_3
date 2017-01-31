@@ -9,7 +9,9 @@ module.exports = {
 const Dream  = require('../models/dream');
 
 function dreamsIndex(req, res){
-  Dream.find((err, dreams) => {
+  const query = {};
+  if(req.query.user) query.user = req.query.user;
+  Dream.find(query, (err, dreams) => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
     return res.status(200).json(dreams);
   });
@@ -19,6 +21,7 @@ function dreamsCreate(req, res){
   const dream = new Dream(req.body.dream);
   dream.user  = req.user._id;
   dream.save((err, dream) => {
+    console.log(err)
     if (err) return res.status(500).json(err);
     return res.status(201).json(dream);
   });

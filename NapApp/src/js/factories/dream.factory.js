@@ -4,8 +4,7 @@ angular
 
 dreamFactory.$inject = ['API', '$resource'];
 function dreamFactory(API, $resource){
-  return $resource(`${API}/users/:id`, { id: '@_id'}, {
-    'new': { method: 'POST', url: `${API}/dreams` },
+  return $resource(`${API}/dreams/:id`, { id: '@_id'}, {
     'update': { method: 'PUT' }
   });
 }
