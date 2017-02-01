@@ -38,13 +38,13 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   vm.getFitbitData = (token) => {
     vm.access = token.access_token;
     $http
-    .get(`https://api.fitbit.com/1/user/-/sleep/date/2017-01-30.json`, {
+    .get(`https://api.fitbit.com/1/user/-/sleep/date/2017-01-31.json`, {
       headers: {'Authorization': `Bearer ${vm.access}`}
     })
     .then(response => {
-      vm.totalSleep = response.data.summary.totalMinutesAsleep;
+      vm.totalSleep = ((response.data.summary.totalMinutesAsleep)/60).toFixed(1);
       vm.noOfSleeps = response.data.summary.totalSleepRecords;
-      vm.timeInBed  = response.data.summary.totalTimeInBed;
+      vm.timeInBed  = ((response.data.summary.totalTimeInBed)/60);
     });
   };
 
@@ -75,20 +75,20 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
       showSelectionBarFromValue: 0,
       getSelectionBarColor: function(value) {
         if (value >= -40 && value <= -20)
-          return 'red';
+          return '#AD343E';
         if (value <= 20 && value > -20)
-          return 'orange';
+          return '#DCA026';
         if (value > 20 && value <= 40)
-          return 'yellow';
+          return '#94BFA7';
         return '#2AE02A';
       },
       getPointerColor: function(value) {
         if (value >= -40 && value <= -20)
-          return 'red';
+          return '#AD343E';
         if (value <= 20 && value > -20)
-          return 'orange';
+          return '#DCA026';
         if (value > 20 && value <= 40)
-          return 'yellow';
+          return '#94BFA7';
         return '#2AE02A';
       }
     }

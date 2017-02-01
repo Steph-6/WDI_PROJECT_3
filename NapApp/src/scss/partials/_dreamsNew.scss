@@ -5,22 +5,32 @@
   margin: 0 auto !important;
   text-align: center;
   opacity: 0.7;
-  background-color: grey;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(128,128,128,0.5);
   border-radius: 10px;
   font-size: 20px;
+  font-weight: lighter;
+}
+
+.circlesContainer {
+  margin: 30px 0 60px 0;
+}
+
+.rz-bubble {
+  visibility: hidden !important;
 }
 
 .newDreamHeader {
   margin: 0 auto;
   padding: 20px 0 10px 0;
-  font-size: 50px;
-  font-weight: bold;
-      text-align: center;
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: center;
 }
 
 .newDreamSubHeader {
-  font-weight: bold;
-  font-size: 35px;
+  font-weight: lighter;
+  font-size: 30px;
   margin: 0 auto;
   text-align: center;
 }
@@ -47,7 +57,7 @@
   height: 260px;
   display: inline-block;
   border-radius: 300px;
-  font-size: 25px;
+  font-size: 15px;
   padding-top: 60px;
   margin: 0 30px;
   position: relative;
@@ -60,7 +70,7 @@
   animation-timing-function: ease-out;
 
   .circle-data-numbers {
-    font-size: 90px;
+    font-size: 50px;
     font-weight: lighter;
   }
 }
