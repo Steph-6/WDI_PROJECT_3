@@ -2,35 +2,24 @@ angular
 .module('napApp')
 .controller('DreamsNewCtrl', DreamsNewCtrl);
 
-DreamsNewCtrl.$inject = ['$state','User', 'Dream', 'CurrentUserService', '$auth', '$http', 'monthService'];
-function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, monthService) {
+DreamsNewCtrl.$inject = ['$state','User', 'Dream', 'CurrentUserService', '$auth', '$http', 'monthService', '$scope'];
+function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, monthService, $scope) {
   const vm     = this;
   const today  = new Date();
   vm.today     = today.toDateString();
   vm.user      = CurrentUserService.currentUser;
-  console.log(vm.today);
   vm.month     = vm.today.substr(4, 3);
   vm.day       = vm.today.substr(8, 2);
   vm.year      = vm.today.substr(11, 4);
   vm.sleepDay  = (vm.day - 1);
-  // vm.monthNo   = monthService(vm.month);
-
+  vm.rating    = 0;
   vm.entryDate = vm.day + ' ' + vm.month + ' ' + vm.year;
-
-  // console.log(today);
-  console.log(vm.month);
-  // console.log(vm.day);
-  // console.log(vm.sleepDay);
-  // console.log(vm.year);
-  // console.log(vm.entryDate);
-  console.log(vm.monthNo);
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
-    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed }})
+    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, rating: vm.rating }})
     .$promise
     .then(dream => {
-      console.log(dream);
       $state.go('dreamsIndex');
     });
   };
@@ -53,10 +42,56 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
       headers: {'Authorization': `Bearer ${vm.access}`}
     })
     .then(response => {
-      console.log(response);
       vm.totalSleep = response.data.summary.totalMinutesAsleep;
       vm.noOfSleeps = response.data.summary.totalSleepRecords;
-      vm.timeInBed = response.data.summary.totalTimeInBed;
+      vm.timeInBed  = response.data.summary.totalTimeInBed;
     });
   };
+
+  $scope.slider = {
+    value: 0,
+    options: {
+      id: 'slider',
+      floor: -40,
+      ceil: 40,
+      onStart: function(id) {
+        console.log(id + ' is average');
+      },
+      onChange: function(id, value) {
+        if (value >= -40 && value <= -20) {
+          console.log(id + ' is unhappy' + ' ' + value);
+          vm.rating = value;
+        } else if (value <= 20 && value > -20) {
+          console.log(id + ' is average' + ' ' + value);
+          vm.rating = value;
+        } else if (value > 20 && value <= 40){
+          console.log(id + ' is happy' + ' ' + value);
+          vm.rating = value;
+        }
+      },
+      showSelectionBar: true,
+      hidePointerLabels: false,
+      hideLimitLabels: true,
+      showSelectionBarFromValue: 0,
+      getSelectionBarColor: function(value) {
+        if (value >= -40 && value <= -20)
+          return 'red';
+        if (value <= 20 && value > -20)
+          return 'orange';
+        if (value > 20 && value <= 40)
+          return 'yellow';
+        return '#2AE02A';
+      },
+      getPointerColor: function(value) {
+        if (value >= -40 && value <= -20)
+          return 'red';
+        if (value <= 20 && value > -20)
+          return 'orange';
+        if (value > 20 && value <= 40)
+          return 'yellow';
+        return '#2AE02A';
+      }
+    }
+  };
+
 }

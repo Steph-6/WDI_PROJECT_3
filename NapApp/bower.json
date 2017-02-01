@@ -21,7 +21,8 @@
     "angular-resource": "^1.5.9",
     "satellizer": "^0.15.5",
     "foundation": "^5.5.3",
-    "jquery.ripples": "https://github.com/coopermayne/jquery.ripples.git"
+    "jquery.ripples": "https://github.com/coopermayne/jquery.ripples.git",
+    "angularjs-slider": "^6.0.0"
   },
   "overrides": {
     "foundation": {
@@ -34,6 +35,12 @@
     "jquery.ripples": {
       "main": [
         "jquery.ripples.js"
+      ]
+    },
+    "angularjs-slider": {
+      "main": [
+        "dist/rzslider.css",
+        "dist/rzslider.js"
       ]
     }
   },
