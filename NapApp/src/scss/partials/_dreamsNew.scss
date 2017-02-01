@@ -1,17 +1,21 @@
 .dreamInput {
-  height: 150px;
+  height: 100px;
   position: relative;
   width: 100%;
   margin: 0 auto !important;
   text-align: center;
+  opacity: 0.7;
+  background-color: grey;
+  border-radius: 10px;
+  font-size: 20px;
 }
 
 .newDreamHeader {
-  display: block;
   margin: 0 auto;
   padding: 20px 0 10px 0;
   font-size: 50px;
   font-weight: bold;
+      text-align: center;
 }
 
 .newDreamSubHeader {
@@ -26,19 +30,89 @@
   width: 90%;
 }
 
-.fitbitDataDiv {
-  display: inline;
-}
-
-.newTextInline {
-  float: right;
-}
-
-.newHeadersInline {
-  display: inline !important;
-  float: left;
-}
-
 .submissionBox {
   clear: both;
+  height: 50px;
+  width: 200px;
+  text-align: center;
+}
+
+.submissionButtons {
+  text-align: center;
+}
+
+.circle-status {
+  text-align: center;
+  width: 260px;
+  height: 260px;
+  display: inline-block;
+  border-radius: 300px;
+  font-size: 25px;
+  padding-top: 60px;
+  margin: 0 30px;
+  position: relative;
+  color: #909899;
+
+  animation-name: pulse;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+
+  .circle-data-numbers {
+    font-size: 90px;
+    font-weight: lighter;
+  }
+}
+
+.circle-row {
+  padding-top: 20px;
+  right: 0;
+  text-align: center;
+
+  .circle-left, .circle-center, .circle-right {
+    display: inline-block;
+    background-color: rgba(255,3,3,0);
+  }
+
+  .circle-left {
+    float: left;
+    border: solid rgba(255,3,3,0.5) 10px;
+  }
+  .circle-center {
+    margin: 0 auto;
+    border: solid rgba(5,5,100,0.5) 10px;
+  }
+  .circle-right {
+    float: right;
+    border: solid rgba(255,255,0,0.5) 10px;
+    padding-top: 40px;
+  }
+  .circle-clear { clear: both; }
+}
+
+
+@keyframes pulse {
+  20% {
+    -webkit-box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+    -moz-box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+    box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+  }
+  60% {
+    -webkit-box-shadow: 0px 0px 48px 10px rgba(120,120,120,0.5);
+    -moz-box-shadow: 0px 0px 48px 10px rgba(120,120,120,0.5);
+    box-shadow: 0px 0px 48px 10px rgba(120,120,120,0.5);
+  }
+  99% {
+    -webkit-box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+    -moz-box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+    box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+  }
+}
+
+li {
+  text-align: center;
+  list-style: none;
+  margin-right: 20px;
+  font-size: 25px;
 }
