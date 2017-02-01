@@ -1,5 +1,7 @@
 .indexTitle{
   padding: 20px;
+  text-align: center;
+   display: block;
 }
 .newDream{
     // list-style: none;
@@ -12,9 +14,7 @@
     display: inline-block;
     width: 350px;
     text-align: center;
-
 }
-
 
 .dreamLinks{
   list-style: none;
@@ -29,22 +29,11 @@
 
 }
 
-.ng-binding{
-  text-align: center;
-    display: block;
-
-}
-
 .dreamDate{
   text-align: center;
-}
-
-.indexTitle{
-  padding: 20px;
-
-
 
 }
+
 .seeDream{
 text-align: center;
 width: 400px;
