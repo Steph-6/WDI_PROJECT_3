@@ -3,6 +3,7 @@ const eventStream      = require('event-stream');
 const buildIndex       = require('./index');
 const buildPartials    = require('./partials');
 const buildImages      = require('./images');
+const buildSounds      = require('./sounds');
 const buildFonts       = require('./fonts');
 
 const buildApp = function() {
@@ -10,6 +11,7 @@ const buildApp = function() {
     buildIndex(),
     buildPartials(),
     buildImages(),
+    buildSounds(),
     buildFonts()
   );
 };
