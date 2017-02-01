@@ -1,29 +1,49 @@
-.media{
+.indexTitle{
+  text-align: center;
+   display: block;
+   margin-right: 65px;
+}
+
+li{
   list-style: none;
-  padding: 20px;
-  height: 20px;
+  text-align: center;
+}
+
+.newDream{
+    padding: 10px;
+    overflow: hidden;
+    margin: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-image: url("http://25.media.tumblr.com/tumblr_mazsiknhRw1r9uwqao1_500.gif") 27;
+    display: inline-block;
+    width: 350px;
+    text-align: center;
+    margin-left: 428px;
+    font-size: 20px;
+
+}
+
+.dreamLinks{
+  padding: 10px;
   overflow: hidden;
-  margin: 30px;
+  margin: 20px;
   border-style: solid;
   border-width: 5px;
   border-image: url("http://25.media.tumblr.com/tumblr_mazsiknhRw1r9uwqao1_500.gif") 27;
-  text-align: center;
   display: inline-block;
+  width: 350px;
+  font-size: 20px;
+
+
+
 }
 
-.ng-binding{
+.dreamDate{
   text-align: center;
-    display: inline-block;
-    width: 400px;
 
 }
 
-.indexTitle{
-  padding: 20px;
-
-
-
-}
 .seeDream{
 text-align: center;
 width: 400px;

@@ -1,9 +1,23 @@
-<h2>Date: {{ dreamsShow.dream.date }}</h2>
-<h4>{{ dreamsShow.dream.entry }}</h4>
-<h4>Total Sleep: {{ dreamsShow.dream.totalSleep }}</h4>
-<h4>Number of Sleeps: {{ dreamsShow.dream.noSleeps }}</h4>
-<h4>Time in Bed: {{ dreamsShow.dream.timeInBed }}</h4>
-<h4>Rating: {{ dreamsShow.dream.rating }}</h4>
+<div class="dream-details">
+  <h2>{{ dreamsShow.dream.date }}</h2>
+  <h4>{{ dreamsShow.dream.entry }}</h4>
+  <h4>Rating: {{ dreamsShow.dream.rating }}</h4>
+<div>
+<ul class="circle-row">
+  <div class="circle-stat circle-left">
+    <div>Total time sleeping <br /> <div class="circle-data-number">{{ dreamsShow.dream.totalSleep }}</div>
+  </div>
+</div>
+  <div class="circle-stat circle-right">
+    Number of <br /> times you slept <br /> <div class="circle-data-number">{{ dreamsShow.dream.noSleeps }}</div>
+  </div>
+  <div class="circle-stat circle-center">
+    Time spent in bed <br /> <div class="circle-data-number">{{ dreamsShow.dream.timeInBed }} </div>
+  </div>
+</ul>
 <ul>
-  <a ng-click="dreamsShow.delete({id: dreams._id})">Delete</a>
+  <li>
+    <a class="edit-link" ui-sref="dreamsEdit({id: dreams._id})">Edit</a>
+    <a class="delete-link" ng-click="dreamsShow.delete({id: dreams._id})">Delete</a>
+  </li>
 </ul>
