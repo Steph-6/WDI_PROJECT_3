@@ -25,19 +25,24 @@ function MoodboardCtrl(ngAudio, $scope) {
     {
       // name: 'rain',
       image: '../images/rain.png',
-      file: new Audio('../sounds/rain-01.mp3')
+      file: '../sounds/rain-01.mp3'
     }, {
       // name: 'thunderstorm',
       image: '../images/thunder.png',
-      file: new Audio('../sounds/thunderstorm.mp3')
+      file: '../sounds/thunderstorm.mp3'
     }, {
       // name: 'waves',
       image: '../images/wave.png',
-      file: new Audio('../sounds/waves.mp3')
+      file: '../sounds/waves.mp3'
     }
   ];
 
-  function playSound(sound) {
+  function playSound(index) {
+    console.log(index);
+    var sound = document.getElementById('sound' + index);
+    console.log(sound);
+    var initialVolume = Math.round(document.getElementById(index).value/50 * 10)/10;
+    sound.volume = initialVolume;
     if(!sound.paused) {
       sound.pause();
     } else {
@@ -45,4 +50,21 @@ function MoodboardCtrl(ngAudio, $scope) {
       sound.play();
     }
   }
+
+  $scope.adjustVolume = adjustVolume;
+
+  function adjustVolume(input){
+    $scope.$apply(function($scope) {
+      // console.log(input.value);
+      // console.log(input.id);
+      var newVolume = Math.round(input.value/50 * 10)/10;
+      console.log(newVolume);
+      var sound = document.getElementById('sound' + input.id);
+      sound.volume = newVolume;
+      var image = document.getElementById('img' + input.id);
+      image.style.opacity = newVolume;
+    });
+
+  }
+
 }
