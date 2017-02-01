@@ -1,0 +1,44 @@
+.dreamInput {
+  height: 150px;
+  position: relative;
+  width: 100%;
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.newDreamHeader {
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0 10px 0;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.newDreamSubHeader {
+  font-weight: bold;
+  font-size: 35px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sliderDiv {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.fitbitDataDiv {
+  display: inline;
+}
+
+.newTextInline {
+  float: right;
+}
+
+.newHeadersInline {
+  display: inline !important;
+  float: left;
+}
+
+.submissionBox {
+  clear: both;
+}

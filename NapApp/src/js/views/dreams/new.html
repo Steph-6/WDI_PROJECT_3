@@ -1,27 +1,35 @@
-<h1>New Journal Entry</h1>
+<h2 class="newDreamHeader">Date: {{ dreamsNew.entryDate }}</h2>
 
-<h2>Morning {{ dreamsNew.user.username }}...</h2>
-<h2>Date {{ dreamsNew.today }}</h2>
-<h2>Rating {{ dreamsNew.rating }}</h2>
+
+  <!-- <h2>Rating {{ dreamsNew.rating }}</h2> -->
+  <h2 class="newDreamSubHeader">How did you sleep?</h2>
+
+<div class="sliderDiv">
+<rzslider rz-slider-model="slider.value"
+          rz-slider-options="slider.options" class="mainMoodSlider"></rzslider>
+        </div>
+
 
 <form ng-submit="dreamsNew.dreamsCreate()">
 
-  <div class="form-group">
-    <label>What did you dream?</label>
-    <input type="text" class="form-control" id="image" placeholder="What did you dream?" ng-model="dreamsNew.dream.entry">
-  </div>
-  <h3>Total Amount of Sleep</h3>
-  <p ng-model="dreamsNew.dream.totalSleep">{{dreamsNew.totalSleep}}</p>
-  <h3>Number of Sleeps</h3>
-  <p ng-model="dreamsNew.dream.noSleeps">{{dreamsNew.noOfSleeps}}</p>
-  <h3>Total Time in Bed</h3>
-  <p ng-model="dreamsNew.dream.timeInBed">{{dreamsNew.timeInBed}}</p>
 
-  <input type="submit" class="btn btn-default" value="Add Dream">
+<!-- <input type="text" class="form-control dreamInput" id="image" placeholder="What did you dream?" ng-model="dreamsNew.dream.entry"> -->
+
+  <div class="form-group">
+      <textarea class="form-control dreamInput" placeholder="What did you dream?" ng-model="dreamsNew.dream.entry">{{dreamsNew.dream.entry}}</textarea>
+  </div>
+
+  <div class="fitbitDataDiv">
+
+  <h3 class="newHeadersInline">Total Amount of Sleep</h3>
+  <p ng-model="dreamsNew.dream.totalSleep" class="newTextInline">{{dreamsNew.totalSleep}}asdg</p>
+  <h3 class="newHeadersInline">Number of Sleeps</h3>
+  <p ng-model="dreamsNew.dream.noSleeps" class="newTextInline">{{dreamsNew.noOfSleeps}}zsfg</p>
+  <h3 class="newHeadersInline">Total Time in Bed</h3>
+  <p ng-model="dreamsNew.dream.timeInBed" class="newTextInline">{{dreamsNew.timeInBed}}zsfg</p>
+</div>
+<br>
+  <input type="submit" class="btn btn-default submissionBox" value="Add Dream">
 </form>
 
-<button type="button" ng-click="dreamsNew.authenticate('fitbit')" name="button">Get FitBit Data</button>
-
-<div>
-<rzslider rz-slider-model="slider.value"
-          rz-slider-options="slider.options"></rzslider></div>
+<button type="button" ng-click="dreamsNew.authenticate('fitbit')" name="button" class="submissionBox">Get FitBit Data</button>
