@@ -17,9 +17,10 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
-    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, rating: vm.rating }})
+    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, rating: vm.colours }})
     .$promise
     .then(dream => {
+      console.log(dream);
       $state.go('dreamsIndex');
     });
   };
@@ -38,13 +39,13 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   vm.getFitbitData = (token) => {
     vm.access = token.access_token;
     $http
-    .get(`https://api.fitbit.com/1/user/-/sleep/date/2017-01-30.json`, {
+    .get(`https://api.fitbit.com/1/user/-/sleep/date/2017-01-31.json`, {
       headers: {'Authorization': `Bearer ${vm.access}`}
     })
     .then(response => {
-      vm.totalSleep = response.data.summary.totalMinutesAsleep;
+      vm.totalSleep = ((response.data.summary.totalMinutesAsleep)/60).toFixed(1);
       vm.noOfSleeps = response.data.summary.totalSleepRecords;
-      vm.timeInBed  = response.data.summary.totalTimeInBed;
+      vm.timeInBed  = ((response.data.summary.totalTimeInBed)/60).toFixed(1);
     });
   };
 
@@ -74,24 +75,31 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
       hideLimitLabels: true,
       showSelectionBarFromValue: 0,
       getSelectionBarColor: function(value) {
-        if (value >= -40 && value <= -20)
-          return 'red';
-        if (value <= 20 && value > -20)
-          return 'orange';
-        if (value > 20 && value <= 40)
-          return 'yellow';
+        if (value >= -40 && value <= -20) {
+          vm.colours = '#AD343E';
+          return '#AD343E';
+        } else if (value <= 20 && value > -20) {
+          vm.colours = '#DCA026';
+          return '#DCA026';
+        } else if (value > 20 && value <= 40) {
+          vm.colours = '#94BFA7';
+          return '#94BFA7';
+        }
         return '#2AE02A';
       },
       getPointerColor: function(value) {
-        if (value >= -40 && value <= -20)
-          return 'red';
-        if (value <= 20 && value > -20)
-          return 'orange';
-        if (value > 20 && value <= 40)
-          return 'yellow';
+        if (value >= -40 && value <= -20) {
+          vm.colours = '#AD343E';
+          return '#AD343E';
+        } else if (value <= 20 && value > -20) {
+          vm.colours = '#DCA026';
+          return '#DCA026';
+        } else if (value > 20 && value <= 40) {
+          vm.colours = '#94BFA7';
+          return '#94BFA7';
+        }
         return '#2AE02A';
       }
     }
   };
-
 }

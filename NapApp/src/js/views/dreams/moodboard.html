@@ -9,6 +9,9 @@
 <audio id="player"></audio>
 
 <ul>
-  <li data-file="{{sound.file}}" ng-repeat="sound in Moodboard.sounds track by $index" ng-click="Moodboard.playSound(this.sound.file)">{{sound.name}} <img src="{{sound.image}}" alt=""></li>
-  <li data-file="{{image.file}}" ng-repeat="image in Moodboard.image track by $index" ng-click="Moodboard.playSound(this.sound.file)"></li>
+  <li ng-repeat="sound in Moodboard.sounds track by $index">{{sound.name}} <img ng-click="Moodboard.playSound($index)" class="soundBoardImg" id="img{{$index}}" src="{{sound.image}}" alt=""><audio volume=0.5 src="{{sound.file}}" id="sound{{$index}}"></audio>
+    <br>
+    <input onchange="angular.element(this).scope().adjustVolume(this)" id="{{$index}}" type="range" min="0" max="50" step="1" />
+  </li>
+  <!-- <li data-file="{{image.file}}" ng-repeat="image in Moodboard.image track by $index" ng-click="Moodboard.playSound(this.sound.file)"></li> -->
 </ul>
