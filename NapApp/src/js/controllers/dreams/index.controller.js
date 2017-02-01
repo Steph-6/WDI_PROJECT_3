@@ -11,7 +11,5 @@ function DreamsIndexCtrl(User, $stateParams, CurrentUserService, Dream) {
   .$promise
   .then(data => {
     vm.dreams = data;
-
   });
-
 }

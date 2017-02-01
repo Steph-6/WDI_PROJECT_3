@@ -18,4 +18,31 @@ function MoodboardCtrl(ngAudio, $scope) {
   vm.wavesPlay = () => {
     $scope.waves.play();
   };
+
+  vm.playSound = playSound;
+
+  vm.sounds = [
+    {
+      // name: 'rain',
+      image: '../images/rain.png',
+      file: new Audio('../sounds/rain-01.mp3')
+    }, {
+      // name: 'thunderstorm',
+      image: '../images/thunder.png',
+      file: new Audio('../sounds/thunderstorm.mp3')
+    }, {
+      // name: 'waves',
+      image: '../images/wave.png',
+      file: new Audio('../sounds/waves.mp3')
+    }
+  ];
+
+  function playSound(sound) {
+    if(!sound.paused) {
+      sound.pause();
+    } else {
+      // sound.currentTime = 0;
+      sound.play();
+    }
+  }
 }
