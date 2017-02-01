@@ -2,17 +2,18 @@
 
 body {
   height: 100%;
-  // font-weight: lighter;
+  font-weight: lighter;
   background:#000000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
   z-index:-2;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, a {
-  font-family: 'News Cycle', sans-serif;
+  // font-family: 'News Cycle', sans-serif;
+  // font-weight: lighter;
 }
 
 h1 {
-  color: #FCFAFA;
+  color: #FFFFFF;
   font-size: 60px;
 }
 
@@ -47,7 +48,7 @@ h2, h3, h4, h5, h6, p, li {
     to {background-position:-10000px 5000px;}
 }
 
-.stars, .twinkling {
+.twinkling {
   position:absolute;
   top:0;
   left:0;
@@ -57,53 +58,26 @@ h2, h3, h4, h5, h6, p, li {
   height:calc(100% - 45px);
   display:block;
   z-index: -1;
-}
-
-.stars {
-  background:#000000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-  z-index:-2;
-}
-
-.twinkling{
   background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
-
-  -moz-animation:move-twink-back 400s linear infinite;
-  -ms-animation:move-twink-back 400s linear infinite;
-  -o-animation:move-twink-back 400s linear infinite;
-  -webkit-animation:move-twink-back 400s linear infinite;
   animation:move-twink-back 400s linear infinite;
 }
 
+
 .fitdata {
   display: inline-block;
+  margin-right: 25px;
+  height: 66px;
+  width: 200px;
 }
 
 p.fit-bit {
-  height: 50px;
-  width: 200px;
-  margin: 0;
-  width: 200px;
+  padding-top: 6px;
   text-align: center;
   font-size: 30px;
 }
 
-button {
-  border: none;
-  background-color: transparent;
-}
-
-button:hover {
-  background-color: transparent;
-  -webkit-transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  -moz-transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  -ms-transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  -o-transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  box-shadow: 0px 0px 35px 15px rgba(255, 255, 255, 0.5);
-}
-
 input.glow {
-  font-family: 'News Cycle', sans-serif;
+  // font-family: 'News Cycle', sans-serif;
   border: 1px solid #FCFAFA;
   background-color: transparent;
   padding-bottom: 60px !important;
@@ -111,11 +85,10 @@ input.glow {
 }
 
 .glow:hover {
-  background-color: transparent;
-  -webkit-transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  -moz-transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  -ms-transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  -o-transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  transition: border-radius 800ms, box-shadow 400ms, opacity 1200ms;
-  box-shadow: 0px 0px 35px 15px rgba(255, 255, 255, 0.5);
+  // -webkit-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+  // -moz-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+  // -ms-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+  // -o-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+  transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+  box-shadow: 0px 0px 32px 12px rgba(255, 255, 255, 0.20);
 }
