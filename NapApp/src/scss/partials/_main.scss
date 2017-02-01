@@ -29,13 +29,6 @@ h2, h3, h4, h5, h6, p, li {
   background-color: transparent;
 }
 
-// a.ng-binding {
-//     background-color: transparent;
-// }
-
-// .top-bar-section li:not(.has-form) a:not(.button) {
-//   background-color: transparent;
-// }
 
 @keyframes move-twink-back {
     from {background-position:0 0;}
@@ -81,6 +74,19 @@ h2, h3, h4, h5, h6, p, li {
   animation:move-twink-back 400s linear infinite;
 }
 
+.fitdata {
+  display: inline-block;
+}
+
+p.fit-bit {
+  height: 50px;
+  width: 200px;
+  margin: 0;
+  width: 200px;
+  text-align: center;
+  font-size: 30px;
+}
+
 button {
   border: none;
   background-color: transparent;
@@ -97,9 +103,10 @@ button:hover {
 }
 
 input.glow {
+  font-family: 'News Cycle', sans-serif;
   border: 1px solid #FCFAFA;
   background-color: transparent;
-  padding-bottom: 10px !important;
+  padding-bottom: 40px !important;
 }
 
 .glow:hover {
