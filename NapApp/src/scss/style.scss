@@ -1,4 +1,10 @@
-@import "partials/main"
+@import "partials/main";
+@import "partials/dreamsIndex";
+@import "partials/dreamsShow";
+@import "partials/login";
+@import "partials/registration";
+@import "partials/dreamsNew";
+
 // // Import all of your scss files here
 // body {
 //   // background: #D3959B; /* fallback for old browsers */
@@ -13,29 +19,3 @@
 // 	height: 100%;
 // 	text-align: center;
 // }
-
-body {
-  font-family: 'News Cycle', sans-serif;
-}
-
-.media{
-  list-style: none;
-  padding: 20px;
-  height: 32px;
-  overflow: hidden;
-}
-.show {
-     overflow: visible;
-     height: auto;
-}
-.ng-binding{
-    border: 5px black;
-
-    text-align: center;
-    display: block;
-}
-
-.indexTitle{
-  padding: 20px;
-
-}
