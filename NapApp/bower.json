@@ -21,7 +21,8 @@
     "angular-resource": "^1.5.9",
     "satellizer": "^0.15.5",
     "foundation": "^5.5.3",
-    "jquery.ripples": "https://github.com/coopermayne/jquery.ripples.git"
+    "jquery.ripples": "https://github.com/coopermayne/jquery.ripples.git",
+    "angular-audio": "^1.7.3"
   },
   "overrides": {
     "foundation": {
