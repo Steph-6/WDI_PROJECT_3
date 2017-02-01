@@ -1,4 +1,22 @@
-<h1>All Dreams</h1>
+<h1 class="indexTitle">All Dreams</h1>
+  <ul class="media" ng-repeat="dreams in dreamsIndex.dreams"
+  ng-class="{show: show}" ng-click="show = !show">
+    <li class="media-body">
+      <a ui-sref="dreamsShow({id: dreams._id})">{{ dreams.date }}</a></li>
+    <li class="media-heading">{{ dreams.entry }}</li>
+    <li>{{ dreams.date }}</li>
+    <li>
+      <a ui-sref="dreamsEdit({id: dreams._id})">Edit Dream</a>
+    </li>
+    <li>
+      <a ui-sref="dreamsShow({id: dreams._id})">Show Dream</a>
+    </li>
+  </ul>
+
+
+
+<!-- <button ng-click="show = true">Show text</button> -->
+<!-- <h1>All Dreams</h1>
 <div class="media" ng-repeat="dreams in dreamsIndex.dreams">
   <div class="media-body">
     <h4 class="media-heading">{{ dreams.entry }}</h4>
@@ -10,4 +28,4 @@
       <a ui-sref="dreamsShow({id: dreams._id})">Show Dream</a>
     </li>
   </div>
-</div>
+</div> -->

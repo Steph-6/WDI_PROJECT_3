@@ -1,3 +1,10 @@
+@import "partials/main";
+@import "partials/dreamsIndex";
+@import "partials/dreamsShow";
+@import "partials/login";
+@import "partials/registration";
+@import "partials/dreamsNew";
+
 // // Import all of your scss files here
 // body {
 //   // background: #D3959B; /* fallback for old browsers */
@@ -12,7 +19,3 @@
 // 	height: 100%;
 // 	text-align: center;
 // }
-
-body {
-  font-family: 'News Cycle', sans-serif;
-}
