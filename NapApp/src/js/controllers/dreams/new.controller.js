@@ -52,12 +52,42 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   $scope.slider = {
     value: 0,
     options: {
-      floor: -50,
-      ceil: 50,
+      id: 'slider',
+      floor: -40,
+      ceil: 40,
+      onStart: function(id) {
+        console.log(id + ' is average');
+      },
+      onChange: function(id, value) {
+        if (value >= -40 && value <= -20) {
+          console.log(id + ' is unhappy' + ' ' + value);
+        } else if (value <= 20 && value > -20) {
+          console.log(id + ' is average' + ' ' + value);
+        } else if (value > 20 && value <= 40){
+          console.log(id + ' is happy' + ' ' + value);
+        }
+      },
       showSelectionBar: true,
-      selectionBarGradient: {
-        from: 'red',
-        to: 'green'
+      hidePointerLabels: false,
+      hideLimitLabels: true,
+      showSelectionBarFromValue: 0,
+      getSelectionBarColor: function(value) {
+        if (value >= -40 && value <= -20)
+          return 'red';
+        if (value <= 20 && value > -20)
+          return 'orange';
+        if (value > 20 && value <= 40)
+          return 'yellow';
+        return '#2AE02A';
+      },
+      getPointerColor: function(value) {
+        if (value >= -40 && value <= -20)
+          return 'red';
+        if (value <= 20 && value > -20)
+          return 'orange';
+        if (value > 20 && value <= 40)
+          return 'yellow';
+        return '#2AE02A';
       }
     }
   };
