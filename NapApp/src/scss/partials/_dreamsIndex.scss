@@ -1,21 +1,31 @@
 .media{
   list-style: none;
   padding: 20px;
-  height: 32px;
+  height: 20px;
   overflow: hidden;
+  margin: 30px;
+  border-style: solid;
+  border-width: 5px;
+  border-image: url("http://25.media.tumblr.com/tumblr_mazsiknhRw1r9uwqao1_500.gif") 27;
+  text-align: center;
+  display: inline-block;
 }
-.show {
-     overflow: visible;
-     height: auto;
-}
-.ng-binding{
-    border: 5px black;
 
-    text-align: center;
-    display: block;
+.ng-binding{
+  text-align: center;
+    display: inline-block;
+    width: 400px;
+
 }
 
 .indexTitle{
   padding: 20px;
+
+
+
+}
+.seeDream{
+text-align: center;
+width: 400px;
 
 }

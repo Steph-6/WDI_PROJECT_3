@@ -4,5 +4,6 @@ angular
     'ngResource',
     'angular-jwt',
     'satellizer',
-    'rzModule'
+    'rzModule',
+    'ngAudio'
   ]);
