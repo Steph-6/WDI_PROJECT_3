@@ -1,6 +1,8 @@
 <h1 class="indexTitle">All Dreams</h1>
-  <ul class="media" ng-repeat="dreams in dreamsIndex.dreams" ng-class="{show: show}" ng-click="show = !show">
-    <li class="media-body"><a>{{ dreams.date }}</a></li>
+  <ul class="media" ng-repeat="dreams in dreamsIndex.dreams"
+  ng-class="{show: show}" ng-click="show = !show">
+    <li class="media-body">
+      <a ui-sref="dreamsShow({id: dreams._id})">{{ dreams.date }}</a></li>
     <li class="media-heading">{{ dreams.entry }}</li>
     <li>{{ dreams.date }}</li>
     <li>
