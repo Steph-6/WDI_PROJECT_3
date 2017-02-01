@@ -6,7 +6,8 @@ const dreamSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   totalSleep: { type: Number, trim: true },
   noSleeps: { type: Number, trim: true },
-  timeInBed: { type: Number, trim: true }
+  timeInBed: { type: Number, trim: true },
+  rating: { type: Number, trim: true }
 });
 
 dreamSchema.pre('validate', function(done) {
