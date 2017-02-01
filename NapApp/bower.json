@@ -22,7 +22,8 @@
     "satellizer": "^0.15.5",
     "foundation": "^5.5.3",
     "jquery.ripples": "https://github.com/coopermayne/jquery.ripples.git",
-    "angularjs-slider": "^6.0.0"
+    "angularjs-slider": "^6.0.0",
+    "angular-audio": "^1.7.3"
   },
   "overrides": {
     "foundation": {

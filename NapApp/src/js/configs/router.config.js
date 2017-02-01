@@ -7,6 +7,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   $locationProvider.html5Mode(true);
 
   $stateProvider
+  .state('moodboard', {
+    url: '/dreams/moodboard',
+    templateUrl: '/js/views/dreams/moodboard.html',
+    controller: 'MoodboardCtrl',
+    controllerAs: 'Moodboard'
+  })
   .state('home', {
     url: '/',
     templateUrl: '/js/views/home.html'
@@ -53,12 +59,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'DreamsShowCtrl',
     controllerAs: 'dreamsShow'
   })
-  .state('moodboard', {
-    url: '/dreams/moodboard',
-    templateUrl: '/js/views/dreams/moodboard.html',
-    controller: 'MoodboardCtrl',
-    controllerAs: 'Moodboard'
-  });
+  ;
 
   $urlRouterProvider.otherwise('/');
 }
