@@ -1,11 +1,7 @@
-<main class="login">
-  <form ng-submit="login.login()">
-    <div class="login">
-      <input class="" type="email" name="email"  ng-model="login.user.email" placeholder="Email">
-    </div>
-    <div class="login">
-      <input class="" type="password" name="password"  ng-model="login.user.password" placeholder="Password">
-    </div>
-    <input class="" type="submit" value="Dream">
-  </form>
-</main>
+<form class="login" ng-submit="login.login()">
+  <div class="name">email:</div>
+  <input class="input" type="email" name="email" ng-model="login.user.email">
+  <div class="name">password:</div>
+  <input class="input" type="password" name="password" ng-model="login.user.password">
+  <input class="submit-dream" type="submit" value="Dream">
+</form>
