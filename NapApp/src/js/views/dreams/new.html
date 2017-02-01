@@ -1,4 +1,4 @@
-<h2 class="newDreamHeader">Date: {{ dreamsNew.entryDate }}</h2>
+<h2 class="newDreamHeader">{{ dreamsNew.entryDate }}</h2>
 
 
   <!-- <h2>Rating {{ dreamsNew.rating }}</h2> -->
@@ -17,10 +17,10 @@
 
   <div class="form-group">
     <h3 class="newDreamSubHeader">What did you dream?</h3>
-      <textarea class="form-control dreamInput" placeholder="What did you dream?" ng-model="dreamsNew.dream.entry">{{dreamsNew.dream.entry}}</textarea>
+      <textarea class="form-control dreamInput"  ng-model="dreamsNew.dream.entry">{{dreamsNew.dream.entry}}</textarea>
   </div>
 
-<div>
+<div class="circlesContainer">
 <ul class="circle-row">
   <div class="circle-status circle-left">
     <div>Total time sleeping <br /> <div class="circle-data-numbers">{{dreamsNew.totalSleep}}</div>
