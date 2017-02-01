@@ -12,13 +12,12 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   vm.day       = vm.today.substr(8, 2);
   vm.year      = vm.today.substr(11, 4);
   vm.sleepDay  = (vm.day - 1);
-  // vm.monthNo   = monthService(vm.month);
-
+  vm.rating    = 0;
   vm.entryDate = vm.day + ' ' + vm.month + ' ' + vm.year;
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
-    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed }})
+    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, rating: vm.rating }})
     .$promise
     .then(dream => {
       $state.go('dreamsIndex');
@@ -61,10 +60,13 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
       onChange: function(id, value) {
         if (value >= -40 && value <= -20) {
           console.log(id + ' is unhappy' + ' ' + value);
+          vm.rating = value;
         } else if (value <= 20 && value > -20) {
           console.log(id + ' is average' + ' ' + value);
+          vm.rating = value;
         } else if (value > 20 && value <= 40){
           console.log(id + ' is happy' + ' ' + value);
+          vm.rating = value;
         }
       },
       showSelectionBar: true,
