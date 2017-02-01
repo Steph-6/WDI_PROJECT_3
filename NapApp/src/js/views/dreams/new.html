@@ -21,14 +21,6 @@
 
 <button type="button" ng-click="dreamsNew.authenticate('fitbit')" name="button">Get FitBit Data</button>
 
-<div class="row">
-  <div class="small-10 medium-11 columns">
-    <div class="range-slider radius" data-slider data-options="display_selector: #sliderOutput3;">
-      <span class="range-slider-handle" role="slider" tabindex="0"></span>
-      <span class="range-slider-active-segment"></span>
-    </div>
-  </div>
-  <div class="small-2 medium-1 columns">
-    <span id="sliderOutput3"></span>
-  </div>
-</div>
+<div>
+<rzslider rz-slider-model="slider.value"
+          rz-slider-options="slider.options"></rzslider></div>

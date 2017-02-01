@@ -2,13 +2,12 @@ angular
 .module('napApp')
 .controller('DreamsNewCtrl', DreamsNewCtrl);
 
-DreamsNewCtrl.$inject = ['$state','User', 'Dream', 'CurrentUserService', '$auth', '$http', 'monthService'];
-function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, monthService) {
+DreamsNewCtrl.$inject = ['$state','User', 'Dream', 'CurrentUserService', '$auth', '$http', 'monthService', '$scope'];
+function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, monthService, $scope) {
   const vm     = this;
   const today  = new Date();
   vm.today     = today.toDateString();
   vm.user      = CurrentUserService.currentUser;
-  console.log(vm.today);
   vm.month     = vm.today.substr(4, 3);
   vm.day       = vm.today.substr(8, 2);
   vm.year      = vm.today.substr(11, 4);
@@ -16,14 +15,6 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   // vm.monthNo   = monthService(vm.month);
 
   vm.entryDate = vm.day + ' ' + vm.month + ' ' + vm.year;
-
-  // console.log(today);
-  console.log(vm.month);
-  // console.log(vm.day);
-  // console.log(vm.sleepDay);
-  // console.log(vm.year);
-  // console.log(vm.entryDate);
-  console.log(vm.monthNo);
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
@@ -54,10 +45,21 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
     .then(response => {
       vm.totalSleep = response.data.summary.totalMinutesAsleep;
       vm.noOfSleeps = response.data.summary.totalSleepRecords;
-      vm.timeInBed = response.data.summary.totalTimeInBed;
+      vm.timeInBed  = response.data.summary.totalTimeInBed;
     });
   };
 
-  vm.slider = $('#slider').attr('data-slider');
-  console.log(vm.slider);
+  $scope.slider = {
+    value: 0,
+    options: {
+      floor: -50,
+      ceil: 50,
+      showSelectionBar: true,
+      selectionBarGradient: {
+        from: 'red',
+        to: 'green'
+      }
+    }
+  };
+
 }
