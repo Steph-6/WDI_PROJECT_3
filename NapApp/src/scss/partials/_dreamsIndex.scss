@@ -1,11 +1,16 @@
 .indexTitle{
-  padding: 20px;
   text-align: center;
    display: block;
+   margin-right: 65px;
 }
+
+li{
+  list-style: none;
+  text-align: center;
+}
+
 .newDream{
-    // list-style: none;
-    padding: 20px;
+    padding: 10px;
     overflow: hidden;
     margin: 20px;
     border-style: solid;
@@ -14,11 +19,13 @@
     display: inline-block;
     width: 350px;
     text-align: center;
+    margin-left: 428px;
+    font-size: 20px;
+
 }
 
 .dreamLinks{
-  list-style: none;
-  padding: 20px;
+  padding: 10px;
   overflow: hidden;
   margin: 20px;
   border-style: solid;
@@ -26,6 +33,9 @@
   border-image: url("http://25.media.tumblr.com/tumblr_mazsiknhRw1r9uwqao1_500.gif") 27;
   display: inline-block;
   width: 350px;
+  font-size: 20px;
+
+
 
 }
 
