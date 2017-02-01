@@ -2,25 +2,30 @@
   text-align: center;
    display: block;
    margin-right: 65px;
+
 }
+
 
 li{
   list-style: none;
   text-align: center;
+  border-radius: 10px;
+
 }
+
+
 
 .newDream{
     padding: 10px;
     overflow: hidden;
     margin: 20px;
-    border-style: solid;
+    border-style: solid;;
     border-width: 5px;
-    border-image: url("http://25.media.tumblr.com/tumblr_mazsiknhRw1r9uwqao1_500.gif") 27;
     display: inline-block;
     width: 350px;
     text-align: center;
-    margin-left: 428px;
     font-size: 20px;
+
 
 }
 
@@ -30,10 +35,11 @@ li{
   margin: 20px;
   border-style: solid;
   border-width: 5px;
-  border-image: url("http://25.media.tumblr.com/tumblr_mazsiknhRw1r9uwqao1_500.gif") 27;
+  border-color: value;
   display: inline-block;
   width: 350px;
   font-size: 20px;
+
 
 
 
@@ -41,11 +47,18 @@ li{
 
 .dreamDate{
   text-align: center;
+  color: #909899;
 
 }
 
 .seeDream{
 text-align: center;
 width: 400px;
+color: #909899;
 
 }
+
+.newDream
+  a{
+    color: #909899;
+  }
