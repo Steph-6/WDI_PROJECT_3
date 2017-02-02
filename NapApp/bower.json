@@ -23,7 +23,8 @@
     "foundation": "^5.5.3",
     "jquery.ripples": "https://github.com/coopermayne/jquery.ripples.git",
     "angularjs-slider": "^6.0.0",
-    "angular-audio": "^1.7.3"
+    "angular-audio": "^1.7.3",
+    "angular-animate": "^1.6.1"
   },
   "overrides": {
     "foundation": {

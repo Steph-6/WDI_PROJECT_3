@@ -47,7 +47,6 @@ function assign(req, res, next) {
       .findById(decoded.id, (err, user) => {
         if (err) return res.status(500).json({ message: 'Invalid JWT token.' });
         if (!user) return res.status(500).json({ message: 'No user found.' });
-        // Assign the user to the request
         req.user = user;
         next();
       });

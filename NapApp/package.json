@@ -53,6 +53,7 @@
     }
   },
   "dependencies": {
+    "angular-typed": "0.0.3",
     "async": "^2.1.4",
     "bcrypt": "^0.8.7",
     "bluebird": "^3.4.7",

@@ -4,10 +4,10 @@
 <!-- <ul>
   <a class="newDream" ui-sref="dreamsNew">New Dream</a>
 </ul> -->
-  <ul class="media-body">
+  <ul class="index-body">
     <li class="dreamColor" ui-sref="dreamsShow({id: dreams._id})">{{ dreams.value }}</li>
     <li class="newDream" ui-sref="dreamsNew"><a>New Dream</a></li>
-    <li class="dreamLinks" ng-repeat="dreams in dreamsIndex.dreams">
+    <li class="dreamLinks" ng-repeat="dreams in dreamsIndex.dreams" ng-style="{'border-color' : '{{dreams.rating}}'}">
       <a class="dreamDate" ui-sref="dreamsShow({id: dreams._id})">{{ dreams.date }}</a>
     </li>
   </ul>
