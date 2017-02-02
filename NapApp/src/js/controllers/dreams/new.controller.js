@@ -2,8 +2,8 @@ angular
 .module('napApp')
 .controller('DreamsNewCtrl', DreamsNewCtrl);
 
-DreamsNewCtrl.$inject = ['$state','User', 'Dream', 'CurrentUserService', '$auth', '$http', 'monthService', '$scope'];
-function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, monthService, $scope) {
+DreamsNewCtrl.$inject = ['$state','User', 'Dream', 'CurrentUserService', '$auth', '$http', '$scope'];
+function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $scope) {
   const vm     = this;
   const today  = new Date();
   vm.today     = today.toDateString();
@@ -15,6 +15,7 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   vm.colours   = 0;
   vm.rating    = 0;
   vm.entryDate = vm.day + ' ' + vm.month + ' ' + vm.year;
+  vm.fitbitMonth = monthSelector(vm.month);
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
@@ -39,7 +40,7 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   vm.getFitbitData = (token) => {
     vm.access = token.access_token;
     $http
-    .get(`https://api.fitbit.com/1/user/-/sleep/date/2017-01-31.json`, {
+    .get(`https://api.fitbit.com/1/user/-/sleep/date/${vm.year}-${vm.fitbitMonth}-${vm.sleepDay}.json`, {
       headers: {'Authorization': `Bearer ${vm.access}`}
     })
     .then(response => {
@@ -102,4 +103,36 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
       }
     }
   };
+  function monthSelector(dates) {
+    var months;
+    switch (dates) {
+      case 'Jan':
+        return '01';
+      case 'Feb':
+        return '02';
+      case 'Mar':
+        return '03';
+      case 'Apr':
+        return '04';
+      case 'May':
+        return '05';
+      case 'Jun':
+        return '06';
+      case 'Jul':
+        return '07';
+      case 'Aug':
+        return '08';
+      case 'Sep':
+        return '09';
+      case 'Oct':
+        return '10';
+      case 'Nov':
+        return '11';
+      case 'Dec':
+        return '12';
+      default:
+        console.log('no month found!');
+        return months;
+    }
+  }
 }
