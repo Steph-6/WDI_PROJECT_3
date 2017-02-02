@@ -34,6 +34,18 @@ function MoodboardCtrl(ngAudio, $scope) {
       // name: 'waves',
       image: '../images/wave.png',
       file: '../sounds/waves.mp3'
+    }, {
+      // name: 'fire',
+      image: '../images/fire.png',
+      file: '../sounds/fire.mp3'
+    }, {
+      // name: 'singingbowl',
+      image: '../images/singingbowl.png',
+      file: '../sounds/singingbowl.mp3'
+    }, {
+      // name: 'crickets',
+      image: '../images/crickets.png',
+      file: '../sounds/crickets.mp3'
     }
   ];
 
