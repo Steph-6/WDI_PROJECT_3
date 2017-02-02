@@ -2,25 +2,12 @@ angular
 .module('napApp')
 .controller('DreamsShowCtrl', DreamsShowCtrl);
 
-DreamsShowCtrl.$inject = ['CurrentUserService', 'Dream', '$stateParams', '$state'];
-function DreamsShowCtrl(CurrentUserService, Dream, $stateParams, $state) {
+DreamsShowCtrl.$inject = ['CurrentUserService', 'Dream', '$stateParams', '$state', 'DreamData'];
+function DreamsShowCtrl(CurrentUserService, Dream, $stateParams, $state, DreamData) {
   const vm = this;
-  dreamsShow();
 
-  function dreamsShow() {
-    Dream
-    .get($stateParams)
-    .$promise
-    .then(data => {
-      vm.dream = data;
-      // $(function() {
-      //   $('.typeThisPlease').typed({
-      //     strings: [vm.dream.entry],
-      //     typeSpeed: 0
-      //   });
-      // });
-    });
-  }
+  vm.dream = DreamData;
+  vm.dreamEntry = [`${vm.dream.entry}`];
 
   vm.delete = function dreamsDelete() {
     Dream

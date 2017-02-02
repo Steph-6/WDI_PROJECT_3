@@ -2,14 +2,15 @@ angular
 .module('napApp')
 .controller('DreamsIndexCtrl', DreamsIndexCtrl);
 
-DreamsIndexCtrl.$inject= ['User', '$stateParams', 'CurrentUserService', 'Dream'];
-function DreamsIndexCtrl(User, $stateParams, CurrentUserService, Dream) {
+DreamsIndexCtrl.$inject= ['Dream'];
+function DreamsIndexCtrl(Dream) {
   const vm = this;
 
   Dream
-  .query({user: CurrentUserService.currentUser._id})
-  .$promise
-  .then(data => {
-    vm.dreams = data;
-  });
+    .query()
+    .$promise
+    .then(data => {
+      console.log(data);
+      vm.dreams = data;
+    });
 }

@@ -57,7 +57,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/dreams/:id',
     templateUrl: '/js/views/dreams/show.html',
     controller: 'DreamsShowCtrl',
-    controllerAs: 'dreamsShow'
+    controllerAs: 'dreamsShow',
+    resolve: {
+      DreamData: function(Dream, $stateParams) {
+        return Dream.get($stateParams).$promise;
+      }
+    }
   })
   ;
 

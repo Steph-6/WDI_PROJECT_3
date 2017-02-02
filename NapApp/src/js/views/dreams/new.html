@@ -1,7 +1,6 @@
 <section class="dreamsNew">
   <div class="container">
     <h2>{{ dreamsNew.entryDate }}</h2>
-    <!-- <h2>Rating {{ dreamsNew.rating }}</h2> -->
     <hr>
 
     <h2>How did you sleep?</h2>
@@ -13,7 +12,7 @@
     <form ng-submit="dreamsNew.dreamsCreate()">
       <textarea name="entry" class="u-full-width" ng-model="dreamsNew.dream.entry">{{dreamsNew.dream.entry}}</textarea>
 
-      <div class="row">
+      <div class="row" ng-if="!dreamsNew.showCircles">
         <a class="button btn-primary" ng-click="dreamsNew.authenticate('fitbit')">Get FitBit Data</a>
       </div>
 

@@ -9,9 +9,9 @@ module.exports = {
 const Dream  = require('../models/dream');
 
 function dreamsIndex(req, res){
-  const query = {};
-  if(req.query.user) query.user = req.query.user;
-  Dream.find(query, (err, dreams) => {
+  Dream.find({
+    user: req.user._id
+  }, (err, dreams) => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
     return res.status(200).json(dreams);
   });

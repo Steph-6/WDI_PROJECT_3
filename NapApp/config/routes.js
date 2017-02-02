@@ -11,19 +11,19 @@ router.route('/login')
   .post(authentications.login);
 
 router.route('/users')
-  .get(users.index);
+  .get(authentications.assign, users.index);
 router.route('/users/:id')
-  .get(users.show)
-  .put(users.update)
-  .delete(users.delete);
+  .get(authentications.assign, users.show)
+  .put(authentications.assign, users.update)
+  .delete(authentications.assign, users.delete);
 router.route('/dreams')
-  .get(dreams.index)
+  .get(authentications.assign, dreams.index)
   .post(authentications.assign, dreams.create);
 router.route('/dreams/:id')
-  .get(dreams.show)
-  .patch(dreams.update)
-  .put(dreams.update)
-  .delete(dreams.delete);
+  .get(authentications.assign, dreams.show)
+  .patch(authentications.assign, dreams.update)
+  .put(authentications.assign, dreams.update)
+  .delete(authentications.assign, dreams.delete);
 
 
 module.exports = router;

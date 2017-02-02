@@ -1,0 +1,31 @@
+.circles {
+  text-align: center;
+  margin-bottom: 3rem;
+  h4 {
+    font-size: 1.5rem;
+  }
+  .circle {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    padding: 50% 0;
+    border-radius: 50%;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    border: 2px solid $accent-color;
+    animation-name: pulse;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    .number {
+      text-align: center;
+      vertical-align: middle;
+      line-height: 0;
+      font-size: 3rem;
+      font-weight: 900;
+    }
+  }
+}
