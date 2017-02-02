@@ -8,8 +8,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, li, a {
-  // font-family: 'News Cycle', sans-serif;
-  // font-weight: lighter;
+
+  font-family: 'News Cycle', sans-serif; //can not do lighter with this font
+
 }
 
 h1 {
@@ -22,7 +23,7 @@ h2, h3, h4, h5, h6, p, li {
 }
 
 .top-bar {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .top-bar-section ul li > a {
@@ -30,20 +31,7 @@ h2, h3, h4, h5, h6, p, li {
   background-color: transparent;
 }
 
-
 @keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-webkit-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-moz-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-ms-keyframes move-twink-back {
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}
 }
@@ -55,7 +43,7 @@ h2, h3, h4, h5, h6, p, li {
   right:0;
   bottom:0;
   width:100%;
-  height:calc(100% - 45px);
+  height:calc(100vh - 45px);
   display:block;
   z-index: -1;
   background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
@@ -65,13 +53,16 @@ h2, h3, h4, h5, h6, p, li {
 
 .fitdata {
   display: inline-block;
-  margin-right: 25px;
   height: 66px;
   width: 200px;
+  margin: 25px;
+
 }
 
 p.fit-bit {
   padding-top: 6px;
+  margin: 0;
+  width: 200px;
   text-align: center;
   font-size: 30px;
 }
@@ -91,4 +82,10 @@ input.glow {
   // -o-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
   transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
   box-shadow: 0px 0px 32px 12px rgba(255, 255, 255, 0.20);
+  margin-bottom: 50px;
+}
+
+.glow:hover {
+  transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+  box-shadow: 0px 0px 30px 15px rgba(255, 255, 255, 0.25);
 }
