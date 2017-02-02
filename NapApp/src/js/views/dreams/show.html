@@ -3,17 +3,18 @@
   <h4>{{ dreamsShow.dream.entry }}</h4>
   <h4>Rating: {{ dreamsShow.dream.rating }}</h4>
   <p typewrite type-delay="100" blink-cursor="false" text="This is a 'typewrite' directive."></p>
+  <h4>Rating: {{ dreamsShow.dream.ratingValue }} / 10</h4>
 <div>
 <ul class="circle-row">
   <div class="circle-stat circle-left">
-    <div>Total time sleeping <br /> <div class="circle-data-number">{{ dreamsShow.dream.totalSleep }}</div>
+    <div>Total time sleeping <br /> <div class="circle-data-number">{{ dreamsShow.dream.totalSleep }}<font size="5">  hours</font></div>
   </div>
 </div>
   <div class="circle-stat circle-right">
-    Number of <br /> times you slept <br /> <div class="circle-data-number">{{ dreamsShow.dream.noSleeps }}</div>
+    Number of<br />times you slept<br /><div class="circle-data-number">{{ dreamsShow.dream.noSleeps }}</div>
   </div>
   <div class="circle-stat circle-center">
-    Time spent in bed <br /> <div class="circle-data-number">{{ dreamsShow.dream.timeInBed }} </div>
+    Time spent in bed <br /> <div class="circle-data-number">{{ dreamsShow.dream.timeInBed }}<font size="5">  hours</font></div>
   </div>
 </ul>
 <ul>
