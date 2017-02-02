@@ -1,15 +1,9 @@
-<!-- <div id="play">&#9658;</div>
-<button type="button" name="Rain" ng-click="Moodboard.rainPlay()">Rain</button>
-<button type="button" name="Thunderstorm" ng-click="Moodboard.thunderPlay()">Thunderstorm</button>
-<button type="button" name="Waves" ng-click="Moodboard.wavesPlay()">Waves</button> -->
-
+<h1>Moodboard</h1>
 
 <audio id="player"></audio>
-
 <ul>
-  <li ng-repeat="sound in Moodboard.sounds track by $index">{{sound.name}} <img ng-click="Moodboard.playSound($index)" class="soundBoardImg" id="img{{$index}}" src="{{sound.image}}" alt=""><audio volume=0.5 src="{{sound.file}}" id="sound{{$index}}"></audio>
+  <li class = "sounds" ng-repeat="sound in Moodboard.sounds track by $index">{{sound.name}} <img ng-click="Moodboard.playSound($index)" class="soundBoardImg" id="img{{$index}}" src="{{sound.image}}" alt=""><audio volume = "0.5" src="{{sound.file}}" id="sound{{$index}}"></audio>
     <br>
     <input onchange="angular.element(this).scope().adjustVolume(this)" id="{{$index}}" type="range" min="0" max="50" step="1" />
   </li>
-  <!-- <li data-file="{{image.file}}" ng-repeat="image in Moodboard.image track by $index" ng-click="Moodboard.playSound(this.sound.file)"></li> -->
 </ul>
