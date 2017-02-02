@@ -5,5 +5,7 @@ angular
     'angular-jwt',
     'satellizer',
     'rzModule',
-    'ngAudio'
+    // 'angular-typed',
+    'ngAudio',
+    'ngAnimate'
   ]);

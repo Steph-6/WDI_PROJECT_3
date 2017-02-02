@@ -1,6 +1,6 @@
 <div class="dream-details">
   <h2>{{ dreamsShow.dream.date }}</h2>
-  <h4>{{ dreamsShow.dream.entry }}</h4>
+  <h4 typed>{{ dreamsShow.dream.entry }}</h4>
   <h4>Rating: {{ dreamsShow.dream.rating }}</h4>
 <div>
 <ul class="circle-row">
@@ -17,7 +17,7 @@
 </ul>
 <ul>
   <li>
-    <a class="edit-link" ui-sref="dreamsEdit({id: dreams._id})">Edit</a>
-    <a class="delete-link" ng-click="dreamsShow.delete({id: dreams._id})">Delete</a>
+    <a class="edit-link glow" ui-sref="dreamsEdit({id: dreams._id})">Edit</a>
+    <a class="delete-link glow" ng-click="dreamsShow.delete({id: dreams._id})">Delete</a>
   </li>
 </ul>

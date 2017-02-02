@@ -6,6 +6,49 @@
 @import "partials/dreamsNew";
 @import "partials/moodboard";
 
+.index.ng-leave 	{ z-index:9999; }
+.index.ng-enter 	{ z-index:8888; }
+
+.index.ng-leave {
+  opacity: 0;
+  transition: 5s;
+}
+.index.ng-enter {
+	opacity: 0;
+  transition: 5s;
+}
+
+.index.ng-enter-active {
+  opacity: 1;
+}
+// .index.circle-row.ng-enter-active {
+//   opacity: 1;
+// }
+// .index.circle-row.ng-enter {
+//   opacity: 0;
+//   transition: 8s;
+// }
+// .index.circle-row.ng-leave {
+//   opacity: 0;
+//   transition: 8s;
+// }
+
+// .index.ng-leave-active {
+//   opacity: 1;
+// }
+
+// @keyframes fade {
+// 	20% 		{ opacity: 0.3; }
+//   60%     { opacity: 1; }
+// 80% { opacity: 0.6;}
+
+// @-moz-keyframes fade {
+// 	from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
+// }
+// @-webkit-keyframes fade {
+// 	from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
+// }
+
 // // Import all of your scss files here
 // body {
 //   // background: #D3959B; /* fallback for old browsers */
