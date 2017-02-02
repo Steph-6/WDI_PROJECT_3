@@ -7,7 +7,7 @@
     <h2>Past dreams</h2>
     <ul>
       <li class="dreamLinks" ng-repeat="dreams in dreamsIndex.dreams" ng-style="{'border-color' : '{{dreams.rating}}'}">
-        <a class="u-full-width button button-primary" ui-sref="dreamsShow({id: dreams._id})">{{ dreams.date }}</a>
+        <a class="u-full-width button button-primary glow" ui-sref="dreamsShow({id: dreams._id})">{{ dreams.date }}</a>
       </li>
     </ul>
   </div>
