@@ -12,12 +12,13 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   vm.day       = vm.today.substr(8, 2);
   vm.year      = vm.today.substr(11, 4);
   vm.sleepDay  = (vm.day - 1);
+  vm.colours   = 0;
   vm.rating    = 0;
   vm.entryDate = vm.day + ' ' + vm.month + ' ' + vm.year;
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
-    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, rating: vm.colours }})
+    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, rating: vm.colours, ratingValue: vm.rating }})
     .$promise
     .then(() => {
       $state.go('dreamsIndex');
@@ -49,22 +50,22 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
   };
 
   $scope.slider = {
-    value: 0,
+    value: 5,
     options: {
       id: 'slider',
-      floor: -40,
-      ceil: 40,
+      floor: 0,
+      ceil: 10,
       onStart: function(id) {
         console.log(id + ' is average');
       },
       onChange: function(id, value) {
-        if (value >= -40 && value <= -20) {
+        if (value >= 0 && value <= 3) {
           console.log(id + ' is unhappy' + ' ' + value);
           vm.rating = value;
-        } else if (value <= 20 && value > -20) {
+        } else if (value <= 7 && value > 3) {
           console.log(id + ' is average' + ' ' + value);
           vm.rating = value;
-        } else if (value > 20 && value <= 40){
+        } else if (value > 7 && value <= 10){
           console.log(id + ' is happy' + ' ' + value);
           vm.rating = value;
         }
@@ -72,32 +73,32 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
       showSelectionBar: true,
       hidePointerLabels: false,
       hideLimitLabels: true,
-      showSelectionBarFromValue: 0,
+      showSelectionBarFromValue: 5,
       getSelectionBarColor: function(value) {
-        if (value >= -40 && value <= -20) {
+        if (value >= 0 && value <= 3) {
           vm.colours = '#AD343E';
           return '#AD343E';
-        } else if (value <= 20 && value > -20) {
+        } else if (value <= 7 && value > 3) {
           vm.colours = '#DCA026';
           return '#DCA026';
-        } else if (value > 20 && value <= 40) {
+        } else if (value > 7 && value <= 10) {
           vm.colours = '#94BFA7';
           return '#94BFA7';
         }
-        return '#2AE02A';
+        return '#FFFFFF';
       },
       getPointerColor: function(value) {
-        if (value >= -40 && value <= -20) {
+        if (value >= 0 && value <= 3) {
           vm.colours = '#AD343E';
           return '#AD343E';
-        } else if (value <= 20 && value > -20) {
+        } else if (value <= 7 && value > 3) {
           vm.colours = '#DCA026';
           return '#DCA026';
-        } else if (value > 20 && value <= 40) {
+        } else if (value > 7 && value <= 10) {
           vm.colours = '#94BFA7';
           return '#94BFA7';
         }
-        return '#2AE02A';
+        return '#FFFFFF';
       }
     }
   };

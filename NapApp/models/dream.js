@@ -7,7 +7,8 @@ const dreamSchema = new mongoose.Schema({
   totalSleep: { type: Number, trim: true },
   noSleeps: { type: Number, trim: true },
   timeInBed: { type: Number, trim: true },
-  rating: { type: String, trim: true }
+  rating: { type: String, trim: true },
+  ratingValue: { type: Number, trim: true }
 });
 
 dreamSchema.pre('validate', function(done) {
