@@ -2,6 +2,7 @@
   <h2>{{ dreamsShow.dream.date }}</h2>
   <h4>{{ dreamsShow.dream.entry }}</h4>
   <h4>Rating: {{ dreamsShow.dream.rating }}</h4>
+  <p typewrite type-delay="100" blink-cursor="false" text="This is a 'typewrite' directive."></p>
 <div>
 <ul class="circle-row">
   <div class="circle-stat circle-left">
@@ -21,3 +22,4 @@
     <a class="delete-link glow" ng-click="dreamsShow.delete({id: dreams._id})">Delete</a>
   </li>
 </ul>
+</div>

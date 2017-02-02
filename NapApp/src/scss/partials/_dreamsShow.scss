@@ -88,3 +88,84 @@ li {
   margin-left: 220px;
   color: #909899;
 }
+
+/* All the keyframes 'vendor prefix' versions: */
+@-webkit-keyframes blink-it {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes blink-it {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes blink-it {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes blink-it {
+ 	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Blinking class */
+.blink {
+	-webkit-animation: blink-it steps(1) 1s infinite;
+	-moz-animation: blink-it steps(1) 1s infinite;
+	-ms-animation: blink-it steps(1) 1s infinite;
+	-o-animation: blink-it steps(1) 1s infinite;
+	animation: blink-it steps(1) 1s infinite;
+}
+
+html {
+  background-image: url('http://subtlepatterns.com/patterns/dark_fish_skin.png');
+  color: #efefef;
+}
+
+p {
+  font-family: Arial;
+  font-size: 46px;
+}
+
+h1 {
+  font-family: Arial;
+  font-size: 52px;
+}

@@ -37,7 +37,7 @@ async.waterfall([
       entry: 'Last night I dreamt that I was half centaur. As in, human from the knees up but with little horse legs. You know, as full centaur would be half and half, half centaur is basically a quarter horse. In this dream I was a horse running in the grand national, but as my legs were all weird and way shorter than the other proper horses I didnt finish the race as its fookin miles and I was essentially only running from the knees down. It was a real blow to my confidence',
       date: '28 Jan 2017',
       user: user._id,
-      totalSleep: 5.5,
+      totalSleep: 5.5 ,
       noSleeps: 3,
       timeInBed: 6,
       rating: '#DCA026'
