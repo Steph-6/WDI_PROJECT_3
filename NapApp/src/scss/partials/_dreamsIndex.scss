@@ -2,9 +2,7 @@
   text-align: center;
    display: block;
    margin-right: 65px;
-
 }
-
 
 li{
   list-style: none;
@@ -13,7 +11,10 @@ li{
 
 }
 
-
+.index-body{
+  text-align: center;
+  // margin: 50px;
+}
 
 .newDream{
     padding: 10px;
@@ -24,7 +25,6 @@ li{
     display: inline-block;
     width: 350px;
     text-align: center;
-    font-size: 20px;
 
 
 }
@@ -38,9 +38,6 @@ li{
   border-color: value;
   display: inline-block;
   width: 350px;
-  font-size: 20px;
-
-
 
 
 }
