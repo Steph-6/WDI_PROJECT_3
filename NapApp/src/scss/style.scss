@@ -6,60 +6,38 @@
 @import "partials/dreamsNew";
 @import "partials/moodboard";
 
-.index.ng-leave 	{ z-index:9999; }
-.index.ng-enter 	{ z-index:8888; }
+.index {
+  position: absolute;
+  width: 100%;
+}
 
 .index.ng-leave {
-  opacity: 0;
-  transition: 5s;
+  animation: fadeOut 2s both linear;
+  z-index:9999;
 }
 .index.ng-enter {
-	opacity: 0;
-  transition: 5s;
+	animation: fadeIn 5s both linear;
+  z-index:8888;
 }
 
 .index.ng-enter-active {
   opacity: 1;
 }
-// .index.circle-row.ng-enter-active {
-//   opacity: 1;
-// }
-// .index.circle-row.ng-enter {
-//   opacity: 0;
-//   transition: 8s;
-// }
-// .index.circle-row.ng-leave {
-//   opacity: 0;
-//   transition: 8s;
-// }
 
-// .index.ng-leave-active {
-//   opacity: 1;
-// }
+@keyframes fadeIn {
+0%    { opacity: 0; }
+40%   { opacity: 0.2; }
+60%   { opacity: 0.6; }
+80%   { opacity: 0.8; }
+100%  { opacity: 1; }
+}
+@keyframes fadeOut {
+0%    { opacity: 1; }
+25%   { opacity: 0.8; }
+50%   { opacity: 0.2; }
+100%  { opacity: 0; }
+}
 
-// @keyframes fade {
-// 	20% 		{ opacity: 0.3; }
-//   60%     { opacity: 1; }
-// 80% { opacity: 0.6;}
-
-// @-moz-keyframes fade {
-// 	from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
-// }
-// @-webkit-keyframes fade {
-// 	from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
-// }
-
-// // Import all of your scss files here
-// body {
-//   // background: #D3959B; /* fallback for old browsers */
-//   // background: -webkit-linear-gradient(to left, #D3959B , #BFE6BA); /* Chrome 10-25, Safari 5.1-6 */
-//   // background: linear-gradient(to left, #D3959B , #BFE6BA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-//   // background-image: -webkit-linear-gradient(to left, #D3959B , #BFE6BA);
-//   // background-image: linear-gradient(to left, #D3959B , #BFE6BA);
-//
-//   background-image: url('/images/bg.jpg');
-// 	background-size: cover;
-// 	background-position: 50% 0;
-// 	height: 100%;
-// 	text-align: center;
-// }
+.index.ng-leave-active {
+  opacity: 0;
+}

@@ -19,8 +19,7 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, mo
     return Dream
     .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, rating: vm.colours }})
     .$promise
-    .then(dream => {
-      console.log(dream);
+    .then(() => {
       $state.go('dreamsIndex');
     });
   };
