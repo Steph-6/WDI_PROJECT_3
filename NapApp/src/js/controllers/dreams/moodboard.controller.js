@@ -9,6 +9,7 @@ function MoodboardCtrl(ngAudio, $scope) {
   $scope.rain = ngAudio.load('https://www.soundjay.com/nature/rain-01.mp3');
   $scope.thunder = ngAudio.load('https://ia801409.us.archive.org/12/items/1HourThunderstorm/1HrThunderstorm.mp3');
   $scope.waves = ngAudio.load('../../../sounds/waves.mp3');
+
   vm.rainPlay = () => {
     $scope.rain.play();
   };
@@ -25,7 +26,7 @@ function MoodboardCtrl(ngAudio, $scope) {
     {
       // name: 'rain',
       image: '../images/rain.png',
-      file: '../sounds/rain-01.mp3'
+      file: 'https://www.soundjay.com/nature/rain-01.mp3'
     }, {
       // name: 'thunderstorm',
       image: '../images/thunder.png',
@@ -50,12 +51,10 @@ function MoodboardCtrl(ngAudio, $scope) {
   ];
 
   function playSound(index) {
-    console.log(index);
     var sound = document.getElementById('sound' + index);
-    console.log(sound);
     var initialVolume = Math.round(document.getElementById(index).value/50 * 10)/10;
     sound.volume = initialVolume;
-    if(!sound.paused) {
+    if (!sound.paused) {
       sound.pause();
     } else {
       // sound.currentTime = 0;
@@ -67,10 +66,7 @@ function MoodboardCtrl(ngAudio, $scope) {
 
   function adjustVolume(input){
     $scope.$apply(function($scope) {
-      // console.log(input.value);
-      // console.log(input.id);
       var newVolume = Math.round(input.value/50 * 10)/10;
-      console.log(newVolume);
       var sound = document.getElementById('sound' + input.id);
       sound.volume = newVolume;
       var image = document.getElementById('img' + input.id);

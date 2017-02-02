@@ -1,0 +1,13 @@
+section.moodboard {
+  text-align: center;
+  .columns {
+    min-height: 200px;
+    vertical-align: middle;
+    img {
+      display: block;
+      margin: 0 auto;
+      min-height: 100px;
+      opacity: 0.5;
+    }
+  }
+}

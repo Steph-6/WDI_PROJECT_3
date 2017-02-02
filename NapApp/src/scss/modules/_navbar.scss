@@ -1,6 +1,5 @@
 body {
   box-sizing: border-box;
-  // overflow: hidden;
   font-family: $body-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,7 +22,7 @@ nav ul {
     padding: 0px 20px;
     display: inline-block;
     font-size: 1.8rem;
-    opacity: 0.8;
+    opacity: 1;
     transition: all 1.5s;
     &:first-child {
       float: left;

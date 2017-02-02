@@ -2,7 +2,7 @@
 <html ng-app="napApp">
 <head>
   <meta charset="utf-8">
-  <title>Slmbr...zZZ</title>
+  <title>nApp</title>
   <link href="/images/zzz.ico" rel="icon" type="image/x-icon" />
   <base href="/" />
   <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
@@ -14,13 +14,15 @@
   <header>
     <nav>
       <ul>
-        <li><a ui-sref="home"><h1>nApp</h1></a></li>
-        <li class="active" ng-hide="main.user"><a ui-sref="register">Register</a></li>
-        <li class="active" ng-hide="main.user"><a ui-sref="login">Login</a></li>
-        <li ng-if="main.user" class="menu" ng-click="main.navOpen = !main.navOpen" ng-class="{'clicked': main.navOpen}"><i class="fa fa-bars" aria-hidden="true"></i></li>
+        <li>
+          <a ui-sref="home"><h1>nApp</h1></a>
+        </li>
+        <li class="active" ng-hide="main.hasUser"><a ui-sref="register">Register</a></li>
+        <li class="active" ng-hide="main.hasUser"><a ui-sref="login">Login</a></li>
+        <li ng-if="main.hasUser" class="menu" ng-click="main.navOpen = !main.navOpen" ng-class="{'clicked': main.navOpen}"><i class="fa fa-bars" aria-hidden="true"></i></li>
       </ul>
     </nav>
-    <div class="sidebar" ng-class="{'show-sidebar': main.navOpen, 'hide-sidebar': !main.navOpen}" ng-if="main.user">
+    <div class="sidebar" ng-class="{'show-sidebar': main.navOpen, 'hide-sidebar': !main.navOpen}" ng-if="main.hasUser">
       <ul class="centered">
         <li>
           <a ui-sref="dreamsIndex">All Dreams</a>

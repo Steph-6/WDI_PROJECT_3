@@ -1,19 +1,19 @@
-.main {
+main {
   position: absolute;
   width: 100%;
 }
 
-.main.ng-leave {
+main.ng-leave {
   animation: fadeOut 2s both linear;
   z-index: 9999;
 }
 
-.main.ng-enter {
+main.ng-enter {
 	animation: fadeIn 5s both linear;
   z-index: 8888;
 }
 
-.main.ng-enter-active {
+main.ng-enter-active {
   opacity: 1;
 }
 
@@ -31,7 +31,7 @@
   100%  { opacity: 0; }
 }
 
-.main.ng-leave-active {
+main.ng-leave-active {
   opacity: 0;
 }
 
