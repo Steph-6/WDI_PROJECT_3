@@ -12,7 +12,6 @@ function MainCtrl($rootScope, CurrentUserService, $state, $scope) {
 
   $rootScope.$on('loggedOut', () => {
     vm.user  = null;
-    vm.ready = true;
     $state.go('login');
   });
 

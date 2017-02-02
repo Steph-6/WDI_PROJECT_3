@@ -1,13 +1,14 @@
-    <h1 class="indexTitle">Good Morning {{ main.user.username }}</h1>
-    <!-- <a class="newDream" ui-sref="dreamsNew">Add Dream</a> -->
-
-<!-- <ul>
-  <a class="newDream" ui-sref="dreamsNew">New Dream</a>
-</ul> -->
-  <ul class="index-body">
-    <li class="dreamColor" ui-sref="dreamsShow({id: dreams._id})">{{ dreams.value }}</li>
-    <li class="newDream" ui-sref="dreamsNew"><a>New Dream</a></li>
-    <li class="dreamLinks" ng-repeat="dreams in dreamsIndex.dreams" ng-style="{'border-color' : '{{dreams.rating}}'}">
-      <a class="dreamDate" ui-sref="dreamsShow({id: dreams._id})">{{ dreams.date }}</a>
-    </li>
-  </ul>
+<section class="dreamsIndex">
+  <div class="container">
+    <h1>Good morning {{ main.user.firstName}}</h1>
+    <hr>
+    <a class="u-full-width button button-primary glow" ui-sref="dreamsNew">New Dream</a>
+    <hr>
+    <h2>Past dreams</h2>
+    <ul>
+      <li class="dreamLinks" ng-repeat="dreams in dreamsIndex.dreams" ng-style="{'border-color' : '{{dreams.rating}}'}">
+        <a class="u-full-width button button-primary" ui-sref="dreamsShow({id: dreams._id})">{{ dreams.date }}</a>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
+  background: $black;
+  border-bottom: 1px solid $white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  color: $white;
+  -webkit-box-shadow: 0 0 0px 1000px $black inset;
+}
+
+input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+  border-bottom: 2px solid $white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 2px solid $white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  -webkit-text-fill-color: $white;
+  -webkit-box-shadow: 0 0 0px 1000px $black inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input, textarea, keygen, select, button {
+  font-size: 14px;
+}

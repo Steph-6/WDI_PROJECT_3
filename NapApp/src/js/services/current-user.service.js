@@ -18,8 +18,6 @@ function CurrentUserService(TokenService, $rootScope, User) {
         }, err => {
           console.log(err);
         });
-    } else {
-      $rootScope.$broadcast('loggedOut');
     }
   };
 

@@ -3,25 +3,25 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 
 
-body {
-  height: 100%;
-  font-weight: 100;
-  background:#000000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-  z-index:-3;
-}
-
-h1, h2, h3, h4, h5, h6, p, li, a {
-font-family: 'Roboto', sans-serif !important;
-}
-
-h1 {
-  color: #FFFFFF;
-  font-size: 60px;
-}
-
-h2, h3, h4, h5, h6, p, li {
-  color: #FFFFFF;
-}
+// body {
+//   height: 100%;
+//   font-weight: 100;
+//   background:#000000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+//   z-index:-3;
+// }
+//
+// h1, h2, h3, h4, h5, h6, p, li, a {
+// font-family: 'Roboto', sans-serif !important;
+// }
+//
+// h1 {
+//   color: #FFFFFF;
+//   font-size: 60px;
+// }
+//
+// h2, h3, h4, h5, h6, p, li {
+//   color: #FFFFFF;
+// }
 
 .top-bar {
   background-color: rgba(0, 0, 0, 0.5);
@@ -90,17 +90,17 @@ input.glow {
   margin-bottom: 20px;
 }
 
-.glow:hover {
-  // -webkit-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
-  // -moz-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
-  // -ms-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
-  // -o-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
-  transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
-  box-shadow: 0px 0px 32px 12px rgba(255, 255, 255, 0.20);
-  margin-bottom: 50px;
-}
-
-.glow:hover {
-  transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
-  box-shadow: 0px 0px 30px 15px rgba(255, 255, 255, 0.25);
-}
+// .glow:hover {
+//   // -webkit-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+//   // -moz-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+//   // -ms-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+//   // -o-transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+//   transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+//   box-shadow: 0px 0px 32px 12px rgba(255, 255, 255, 0.20);
+//   margin-bottom: 50px;
+// }
+//
+// .glow:hover {
+//   transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+//   box-shadow: 0px 0px 30px 15px rgba(255, 255, 255, 0.25);
+// }

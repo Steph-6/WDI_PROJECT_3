@@ -34,3 +34,21 @@
 .main.ng-leave-active {
   opacity: 0;
 }
+
+@keyframes pulse {
+  20% {
+    -webkit-box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+    -moz-box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+    box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+  }
+  60% {
+    -webkit-box-shadow: 0px 0px 48px 10px rgba(120,120,120,0.5);
+    -moz-box-shadow: 0px 0px 48px 10px rgba(120,120,120,0.5);
+    box-shadow: 0px 0px 48px 10px rgba(120,120,120,0.5);
+  }
+  99% {
+    -webkit-box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+    -moz-box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+    box-shadow: 0px 0px 48px 3px rgba(120,120,120,0.28);
+  }
+}

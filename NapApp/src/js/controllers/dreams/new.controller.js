@@ -4,18 +4,19 @@ angular
 
 DreamsNewCtrl.$inject = ['$state','User', 'Dream', 'CurrentUserService', '$auth', '$http', '$scope'];
 function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $scope) {
-  const vm     = this;
-  const today  = new Date();
-  vm.today     = today.toDateString();
-  vm.user      = CurrentUserService.currentUser;
-  vm.month     = vm.today.substr(4, 3);
-  vm.day       = vm.today.substr(8, 2);
-  vm.year      = vm.today.substr(11, 4);
-  vm.sleepDay  = (vm.day - 1);
-  vm.colours   = 0;
-  vm.rating    = 0;
-  vm.entryDate = vm.day + ' ' + vm.month + ' ' + vm.year;
+  const vm       = this;
+  const today    = new Date();
+  vm.today       = today.toDateString();
+  vm.user        = CurrentUserService.currentUser;
+  vm.month       = vm.today.substr(4, 3);
+  vm.day         = vm.today.substr(8, 2);
+  vm.year        = vm.today.substr(11, 4);
+  vm.sleepDay    = (vm.day - 1);
+  vm.colours     = 0;
+  vm.rating      = 0;
+  vm.entryDate   = vm.day + ' ' + vm.month + ' ' + vm.year;
   vm.fitbitMonth = monthSelector(vm.month);
+  vm.showCircles = false;
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
@@ -44,9 +45,10 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $s
       headers: {'Authorization': `Bearer ${vm.access}`}
     })
     .then(response => {
-      vm.totalSleep = ((response.data.summary.totalMinutesAsleep)/60).toFixed(1);
-      vm.noOfSleeps = response.data.summary.totalSleepRecords;
-      vm.timeInBed  = ((response.data.summary.totalTimeInBed)/60).toFixed(1);
+      vm.totalSleep  = ((response.data.summary.totalMinutesAsleep)/60).toFixed(1);
+      vm.noOfSleeps  = response.data.summary.totalSleepRecords;
+      vm.timeInBed   = ((response.data.summary.totalTimeInBed)/60).toFixed(1);
+      vm.showCircles = true;
     });
   };
 

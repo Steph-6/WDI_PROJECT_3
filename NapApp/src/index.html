@@ -18,10 +18,10 @@
         <li class="active" ng-hide="main.user"><a ui-sref="register">Register</a></li>
         <li class="active" ng-hide="main.user"><a ui-sref="login">Login</a></li>
         <li class="active" ng-show="main.user"><a ng-click="main.logout()">Logout</a></li>
-        <li ng-show="main.user" class="menu" ng-click="main.navOpen = !main.navOpen" ng-class="{'clicked': main.navOpen}"><i class="fa fa-bars" aria-hidden="true"></i></li>
+        <li ng-if="main.user" class="menu" ng-click="main.navOpen = !main.navOpen" ng-class="{'clicked': main.navOpen}"><i class="fa fa-bars" aria-hidden="true"></i></li>
       </ul>
     </nav>
-    <div class="sidebar" ng-class="{'show-sidebar': main.navOpen, 'hide-sidebar': !main.navOpen}">
+    <div class="sidebar" ng-class="{'show-sidebar': main.navOpen, 'hide-sidebar': !main.navOpen}" ng-if="main.user">
       <ul class="centered">
         <li>
           <a ui-sref="dreamsIndex">All Dreams</a>

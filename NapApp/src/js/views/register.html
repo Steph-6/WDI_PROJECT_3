@@ -1,24 +1,29 @@
-<form class="register" ng-submit="register.register()">
-  <div class="name">username:
-    <input type="text" name="username" ng-model="register.user.username">
+<section class="login">
+  <div class="container">
+    <h2>Register</h2>
+    <form class="register" ng-submit="register.register()">
+      <label for="username">Username</label>
+      <input class="u-full-width" type="text" name="username" ng-model="register.user.username">
+
+      <label for="firstName">First name</label>
+      <input class="u-full-width" type="text" name="firstName" ng-model="register.user.firstName">
+
+      <label for="lastName">Last name</label>
+      <input class="u-full-width" type="text" name="lastName" ng-model="register.user.lastName">
+
+      <label for="image">Image url</label>
+      <input class="u-full-width" type="text" name="image" ng-model="register.user.image">
+
+      <label for="email">Email</label>
+      <input class="u-full-width" type="email" name="email" ng-model="register.user.email" >
+
+      <label for="password">Password</label>
+      <input class="u-full-width" type="password" name="password" ng-model="register.user.password" >
+
+      <label for="passwordConfirmation">Password confirmation</label>
+      <input class="u-full-width" type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" >
+
+      <input class="u-full-width glow button-primary" type="submit" value="dream with us.">
+    </form>
   </div>
-  <div class="name">first name:
-    <input type="text" name="firstName" ng-model="register.user.firstName">
-  </div>
-  <div class="name">last name:
-    <input type="text" name="lastName" ng-model="register.user.lastName">
-  </div>
-  <div class="name">image url:
-    <input type="text" name="image" ng-model="register.user.image">
-  </div>
-  <div class="name">email:
-    <input type="email" name="email" ng-model="register.user.email" >
-  </div>
-  <div class="name">password:
-    <input type="password" name="password" ng-model="register.user.password" >
-  </div>
-  <div class="name">password confirmation:
-    <input type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" >
-  </div> <br />
-  <input class="submit-register glow" type="submit" value="Submit" />
-</form>
+</section>

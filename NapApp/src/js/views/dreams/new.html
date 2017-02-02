@@ -1,37 +1,45 @@
-<h2 class="newDreamHeader">{{ dreamsNew.entryDate }}</h2>
-<!-- <h2>Rating {{ dreamsNew.rating }}</h2> -->
-<h2 class="newDreamSubHeader">How did you sleep?</h2>
+<section class="dreamsNew">
+  <div class="container">
+    <h2>{{ dreamsNew.entryDate }}</h2>
+    <!-- <h2>Rating {{ dreamsNew.rating }}</h2> -->
+    <hr>
 
-<div class="sliderDiv">
-<rzslider rz-slider-model="slider.value"
-          rz-slider-options="slider.options" class="mainMoodSlider"></rzslider></div>
+    <h2>How did you sleep?</h2>
+    <rzslider rz-slider-model="slider.value"
+    rz-slider-options="slider.options" class="mainMoodSlider"></rzslider>
+    <hr>
 
-<form ng-submit="dreamsNew.dreamsCreate()">
-<!-- <input type="text" class="form-control dreamInput" id="image" placeholder="What did you dream?" ng-model="dreamsNew.dream.entry"> -->
-  <div class="form-group">
-    <h3 class="newDreamSubHeader">What did you dream?</h3>
-      <textarea class="form-control dreamInput"  ng-model="dreamsNew.dream.entry">{{dreamsNew.dream.entry}}</textarea>
-  </div>
+    <h3>What did you dream?</h3>
+    <form ng-submit="dreamsNew.dreamsCreate()">
+      <textarea name="entry" class="u-full-width" ng-model="dreamsNew.dream.entry">{{dreamsNew.dream.entry}}</textarea>
 
-<div class="circlesContainer">
-<ul class="circle-row">
-  <div class="circle-status circle-left">
-    <div>Total time sleeping <br /> <div class="circle-data-numbers">{{dreamsNew.totalSleep}}</div><font size="5">hours</font>
-  </div>
-  </div>
-  <div class="circle-status circle-right">
-    Number of <br /> times you slept <br /> <div class="circle-data-numbers">{{dreamsNew.noOfSleeps}}</div>
-  </div>
-  <div class="circle-status circle-center">
-    Time spent in bed <br /> <div class="circle-data-numbers">{{dreamsNew.timeInBed}}</div><font size="5">hours</font>
-  </div>
-</ul>
-</div>
+      <div class="row">
+        <a class="button btn-primary" ng-click="dreamsNew.authenticate('fitbit')">Get FitBit Data</a>
+      </div>
 
-<div class="submissionButtons">
-  <div class="fitdata glow">
-  <p type="button" ng-click="dreamsNew.authenticate('fitbit')" name="button" class="submissionBox fit-bit">Get FitBit Data</p>
-</div>
-  <input type="submit" class="submissionBox glow" value="Add Dream">
-</div>
-</form>
+      <div class="row circles" ng-if="dreamsNew.showCircles">
+        <div class="four columns">
+          <h4>Total time sleeping</h4>
+          <div class="circle">
+            <p class="number">{{dreamsNew.totalSleep}}</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <h4>Times you slept</h4>
+          <div class="circle">
+            <p class="number">{{dreamsNew.noOfSleeps}}</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <h4>Time spent in bed</h4>
+          <div class="circle">
+            <p class="number">{{dreamsNew.timeInBed}}</p>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <input type="submit" class="submissionBox glow" value="Add Dream">
+    </form>
+  </div>
+</section>

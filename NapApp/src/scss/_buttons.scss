@@ -1,0 +1,16 @@
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+  background-color: $black;
+  border-color: $black;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  height: 3rem;
+  border: none;
+  &:hover {
+    background-color: $black;
+  }
+}
+
+.glow:hover {
+  transition: border-radius 800ms, box-shadow 1400ms, opacity 1200ms;
+  box-shadow: 0px 0px 200px 12px rgba(255, 255, 255, 0.35);
+}
