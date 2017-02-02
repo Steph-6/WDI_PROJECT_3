@@ -1,43 +1,18 @@
-@import "partials/main";
-@import "partials/dreamsIndex";
-@import "partials/dreamsShow";
-@import "partials/login";
-@import "partials/registration";
-@import "partials/dreamsNew";
-@import "partials/moodboard";
+// @import "partials/main";
+// @import "partials/dreamsIndex";
+// @import "partials/dreamsShow";
+// @import "partials/login";
+// @import "partials/registration";
+// @import "partials/dreamsNew";
+// @import "partials/moodboard";
+// @import "animations";
 
-.index {
-  position: absolute;
-  width: 100%;
-}
+@import "variables";
+@import "structure";
+@import "typography";
+@import "animations";
 
-.index.ng-leave {
-  animation: fadeOut 2s both linear;
-  z-index:9999;
-}
-.index.ng-enter {
-	animation: fadeIn 5s both linear;
-  z-index:8888;
-}
+@import "modules/navbar";
+@import "modules/loading";
 
-.index.ng-enter-active {
-  opacity: 1;
-}
-
-@keyframes fadeIn {
-0%    { opacity: 0; }
-40%   { opacity: 0.2; }
-60%   { opacity: 0.6; }
-80%   { opacity: 0.8; }
-100%  { opacity: 1; }
-}
-@keyframes fadeOut {
-0%    { opacity: 1; }
-25%   { opacity: 0.8; }
-50%   { opacity: 0.2; }
-100%  { opacity: 0; }
-}
-
-.index.ng-leave-active {
-  opacity: 0;
-}
+@import "pages/home";

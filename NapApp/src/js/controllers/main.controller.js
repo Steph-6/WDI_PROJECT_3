@@ -2,16 +2,17 @@ angular
   .module('napApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', 'CurrentUserService', '$state'];
-function MainCtrl($rootScope, CurrentUserService, $state) {
+MainCtrl.$inject = ['$rootScope', 'CurrentUserService', '$state', '$scope'];
+function MainCtrl($rootScope, CurrentUserService, $state, $scope) {
   const vm = this;
 
   $rootScope.$on('loggedIn', () => {
-    vm.user = CurrentUserService.currentUser;
+    vm.user  = CurrentUserService.currentUser;
   });
 
   $rootScope.$on('loggedOut', () => {
-    vm.user = null;
+    vm.user  = null;
+    vm.ready = true;
     $state.go('login');
   });
 

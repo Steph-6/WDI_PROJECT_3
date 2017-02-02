@@ -20,23 +20,23 @@
     "angular-ui-router": "^0.3.2",
     "angular-resource": "^1.5.9",
     "satellizer": "^0.15.5",
-    "jquery.ripples": "https://github.com/coopermayne/jquery.ripples.git",
     "angularjs-slider": "^6.0.0",
     "angular-audio": "^1.7.3",
     "angular-animate": "^1.6.1",
-    "angular-typewrite": "^0.0.15",
+    "font-awesome": "^4.7.0",
+    "reset-css": "^2.2.0",
     "skeleton": "^2.0.4"
   },
   "overrides": {
-    "skeleton": {
+    "reset-css": {
       "main": [
-        "css/normalize.css",
-        "css/foundation.css"
+        "reset.css"
       ]
     },
-    "jquery.ripples": {
+    "font-awesome": {
       "main": [
-        "jquery.ripples.js"
+        "css/font-awesome.css",
+        "fonts/*"
       ]
     },
     "angularjs-slider": {

@@ -1,0 +1,36 @@
+.main {
+  position: absolute;
+  width: 100%;
+}
+
+.main.ng-leave {
+  animation: fadeOut 2s both linear;
+  z-index: 9999;
+}
+
+.main.ng-enter {
+	animation: fadeIn 5s both linear;
+  z-index: 8888;
+}
+
+.main.ng-enter-active {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0%    { opacity: 0; }
+  40%   { opacity: 0.2; }
+  60%   { opacity: 0.6; }
+  80%   { opacity: 0.8; }
+  100%  { opacity: 1; }
+}
+@keyframes fadeOut {
+  0%    { opacity: 1; }
+  25%   { opacity: 0.8; }
+  50%   { opacity: 0.2; }
+  100%  { opacity: 0; }
+}
+
+.main.ng-leave-active {
+  opacity: 0;
+}
