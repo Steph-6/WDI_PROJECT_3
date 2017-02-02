@@ -6,6 +6,11 @@ body {
   opacity: 0.5;
 }
 
-#sound {
-  text-align: center;
+.sounds2 {
+margin: 0 auto;
+text-align: center;
+}
+.sounds {
+  display: inline-block;
+  vertical-align: top;
 }

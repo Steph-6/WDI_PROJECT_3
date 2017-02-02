@@ -44,8 +44,8 @@ function MoodboardCtrl(ngAudio, $scope) {
       file: '../sounds/singingbowl.mp3'
     }, {
       // name: 'crickets',
-      image: '../images/crickets.png',
-      file: '../sounds/crickets.mp3'
+      image: '../images/cricket.png',
+      file: '../sounds/cricket.mp3'
     }
   ];
 
@@ -76,7 +76,5 @@ function MoodboardCtrl(ngAudio, $scope) {
       var image = document.getElementById('img' + input.id);
       image.style.opacity = newVolume;
     });
-
   }
-
 }
