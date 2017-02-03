@@ -38,11 +38,11 @@ function MoodboardCtrl(ngAudio, $scope) {
     }, {
       // name: 'fire',
       image: '../images/fire.png',
-      file: '../sounds/fire.mp3'
+      file: 'https://www.freesoundeffects.com/mp3_89310.mp3'
     }, {
       // name: 'singingbowl',
       image: '../images/singingbowl.png',
-      file: '../sounds/singingbowl.mp3'
+      file: 'https://youtu.be/-Ux4N_91v-Y'
     }, {
       // name: 'crickets',
       image: '../images/cricket.png',
