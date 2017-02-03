@@ -4,7 +4,7 @@
   "description": "Sleepy time...",
   "main": "index.js",
   "scripts": {
-    "postinstall": "bower install && gulp deploy"
+  
   },
   "author": "Dream Machine <dream@machine.com>",
   "license": "ISC",
