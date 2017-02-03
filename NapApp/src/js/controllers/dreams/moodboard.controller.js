@@ -30,23 +30,23 @@ function MoodboardCtrl(ngAudio, $scope) {
     }, {
       // name: 'thunderstorm',
       image: '../images/thunder.png',
-      file: '../sounds/thunderstorm.mp3'
+      file: 'https://ia801409.us.archive.org/12/items/1HourThunderstorm/1HrThunderstorm.mp3'
     }, {
       // name: 'waves',
       image: '../images/wave.png',
-      file: '../sounds/waves.mp3'
+      file: 'https://ia902705.us.archive.org/24/items/OceanSound-NatureSounds/08Ocean.mp3'
     }, {
       // name: 'fire',
       image: '../images/fire.png',
-      file: 'https://www.freesoundeffects.com/mp3_89310.mp3'
+      file: 'https://ia601405.us.archive.org/33/items/JazzRainFireplace/Jazz+Rain+Fireplace.mp3'
     }, {
       // name: 'singingbowl',
       image: '../images/singingbowl.png',
-      file: 'https://youtu.be/-Ux4N_91v-Y'
+      file: 'https://ia800303.us.archive.org/15/items/singingbowl/singingbowl_64kb.mp3'
     }, {
       // name: 'crickets',
       image: '../images/cricket.png',
-      file: '../sounds/cricket.mp3'
+      file: 'https://ia902700.us.archive.org/22/items/crickets_972/crickets.mp3'
     }
   ];
 

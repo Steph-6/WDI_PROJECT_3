@@ -12,15 +12,14 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $s
   vm.day         = vm.today.substr(8, 2);
   vm.year        = vm.today.substr(11, 4);
   vm.sleepDay    = (vm.day - 1);
-  vm.colours     = 0;
-  vm.rating      = 0;
   vm.entryDate   = vm.day + ' ' + vm.month + ' ' + vm.year;
   vm.fitbitMonth = monthSelector(vm.month);
   vm.showCircles = false;
+  vm.ratingValue = 'Zzz';
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
-    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, rating: vm.colours, ratingValue: vm.rating }})
+    .save({ dream: { entry: vm.dream.entry, date: vm.entryDate, totalSleep: vm.totalSleep, noSleeps: vm.noOfSleeps, timeInBed: vm.timeInBed, ratingValue: vm.ratingValue }})
     .$promise
     .then(() => {
       $state.go('dreamsIndex');
@@ -53,7 +52,7 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $s
   };
 
   $scope.slider = {
-    value: 5,
+    value: 0,
     options: {
       id: 'slider',
       floor: 0,
@@ -62,49 +61,30 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $s
         console.log(id + ' is average');
       },
       onChange: function(id, value) {
-        if (value >= 0 && value <= 3) {
+        if (value >= 0 && value <= 2) {
           console.log(id + ' is unhappy' + ' ' + value);
-          vm.rating = value;
-        } else if (value <= 7 && value > 3) {
+          vm.ratingValue = 'z';
+        } else if (value <= 4 && value > 2) {
           console.log(id + ' is average' + ' ' + value);
-          vm.rating = value;
-        } else if (value > 7 && value <= 10){
+          vm.ratingValue = 'Zz';
+        } else if (value > 4 && value <= 6){
           console.log(id + ' is happy' + ' ' + value);
-          vm.rating = value;
+          vm.ratingValue = 'Zzz';
+        } else if (value > 6 && value <= 8){
+          console.log(id + ' is happy' + ' ' + value);
+          vm.ratingValue = 'Zzzz';
+        } else if (value > 8 && value <= 10){
+          console.log(id + ' is happy' + ' ' + value);
+          vm.ratingValue = 'Zzzzz';
         }
       },
-      showSelectionBar: true,
+      showSelectionBar: false,
       hidePointerLabels: false,
       hideLimitLabels: true,
-      showSelectionBarFromValue: 5,
-      getSelectionBarColor: function(value) {
-        if (value >= 0 && value <= 3) {
-          vm.colours = '#AD343E';
-          return '#AD343E';
-        } else if (value <= 7 && value > 3) {
-          vm.colours = '#DCA026';
-          return '#DCA026';
-        } else if (value > 7 && value <= 10) {
-          vm.colours = '#94BFA7';
-          return '#94BFA7';
-        }
-        return '#FFFFFF';
-      },
-      getPointerColor: function(value) {
-        if (value >= 0 && value <= 3) {
-          vm.colours = '#AD343E';
-          return '#AD343E';
-        } else if (value <= 7 && value > 3) {
-          vm.colours = '#DCA026';
-          return '#DCA026';
-        } else if (value > 7 && value <= 10) {
-          vm.colours = '#94BFA7';
-          return '#94BFA7';
-        }
-        return '#FFFFFF';
-      }
+      showSelectionBarFromValue: 0
     }
   };
+
   function monthSelector(dates) {
     var months;
     switch (dates) {

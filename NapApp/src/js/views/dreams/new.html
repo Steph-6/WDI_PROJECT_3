@@ -3,7 +3,7 @@
     <h2>{{ dreamsNew.entryDate }}</h2>
     <hr>
 
-    <h2>How did you sleep?</h2>
+    <h3>How did you sleep?</h3>
     <rzslider rz-slider-model="slider.value"
     rz-slider-options="slider.options" class="mainMoodSlider"></rzslider>
     <hr>
@@ -13,7 +13,7 @@
       <textarea name="entry" class="u-full-width" ng-model="dreamsNew.dream.entry">{{dreamsNew.dream.entry}}</textarea>
 
       <div class="row" ng-if="!dreamsNew.showCircles">
-        <a class="button btn-primary" ng-click="dreamsNew.authenticate('fitbit')">Get FitBit Data</a>
+        <a class="button btn-primary glow" ng-click="dreamsNew.authenticate('fitbit')">Get FitBit Data</a>
       </div>
 
       <div class="row circles" ng-if="dreamsNew.showCircles">

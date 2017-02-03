@@ -40,7 +40,7 @@ async.waterfall([
       totalSleep: 5.5 ,
       noSleeps: 3,
       timeInBed: 6,
-      rating: '#DCA026'
+      ratingValue: 'Zz'
     });
     dream1.save((err, dream) => {
       if (err) return done(err);
@@ -56,7 +56,7 @@ async.waterfall([
       totalSleep: 7.7,
       noSleeps: 1,
       timeInBed: 8.5,
-      rating: '#AD343E'
+      ratingValue: 'Zzzz'
     });
     dream2.save((err, dream) => {
       if (err) return done(err);
@@ -67,8 +67,12 @@ async.waterfall([
   function dreamCreate3(user, done) {
     const dream3 = new Dream({
       entry: 'I was a weresloth, a man that turns into a sloth during the full moon.',
-      date: new Date(),
-      user: user._id
+      date: '30 Jan 2017',
+      user: user._id,
+      totalSleep: 5.7,
+      noSleeps: 1,
+      timeInBed: 6.5,
+      ratingValue: 'Zzzz'
     });
     dream3.save((err, dream) => {
       if (err) return done(err);
@@ -76,7 +80,7 @@ async.waterfall([
       return done(null, user, dream);
     });
   }
-], function (err) {
+], function(err) {
   if (err) return console.log(err);
   console.log('finished');
   return process.exit();

@@ -1,3 +1,18 @@
 section.dreamsNew {
   text-align: center;
+  h3 {
+    font-size: 3rem;
+  }
+}
+
+.rzslider .rz-pointer {
+  background-color: $white;
+}
+
+.rzslider .rz-selection {
+  background-color: $accent-color;
+}
+
+:focus {
+  outline: none;
 }
