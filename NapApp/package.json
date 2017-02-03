@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "bower install && gulp deploy"
   },
-  "author": "Alex Chin <alex@alexchin.co.uk>",
+  "author": "Dream Machine <dream@machine.com>",
   "license": "ISC",
   "gulp": {
     "srcDir": "src/",
