@@ -1,0 +1,44 @@
+<section class="dreamsNew">
+  <div class="container">
+    <h2>{{ dreamsNew.entryDate }}</h2>
+    <hr>
+
+    <h3>How did you sleep?</h3>
+    <rzslider rz-slider-model="slider.value"
+    rz-slider-options="slider.options" class="mainMoodSlider"></rzslider>
+    <hr>
+
+    <h3>What did you dream?</h3>
+    <form ng-submit="dreamsNew.dreamsCreate()">
+      <textarea name="entry" class="u-full-width" ng-model="dreamsNew.dream.entry">{{dreamsNew.dream.entry}}</textarea>
+
+      <div class="row" ng-if="!dreamsNew.showCircles">
+        <a class="button btn-primary glow" ng-click="dreamsNew.authenticate('fitbit')">Get FitBit Data</a>
+      </div>
+
+      <div class="row circles" ng-if="dreamsNew.showCircles">
+        <div class="four columns">
+          <h4>Total time sleeping</h4>
+          <div class="circle">
+            <p class="number">{{dreamsNew.totalSleep}}</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <h4>Times you slept</h4>
+          <div class="circle">
+            <p class="number">{{dreamsNew.noOfSleeps}}</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <h4>Time spent in bed</h4>
+          <div class="circle">
+            <p class="number">{{dreamsNew.timeInBed}}</p>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <input type="submit" class="submissionBox glow" value="Add Dream">
+    </form>
+  </div>
+</section>
