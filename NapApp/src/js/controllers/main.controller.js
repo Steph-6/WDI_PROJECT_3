@@ -24,6 +24,11 @@ function MainCtrl($rootScope, CurrentUserService, $state, TokenService) {
     CurrentUserService.removeUser();
   };
 
+  vm.highlightBackground = () => {
+    var item = document.getElementById('highlightThis');
+    item.className += 'glowing';
+  };
+
   $rootScope.$on('$stateChangeSuccess', function () {
     vm.navOpen = false;
   });
