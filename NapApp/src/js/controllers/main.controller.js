@@ -15,13 +15,18 @@ function MainCtrl($rootScope, CurrentUserService, $state, TokenService) {
   });
 
   $rootScope.$on('loggedOut', () => {
-    vm.user    = null;
+    vm.user     = null;
     vm.hasUser = null;
     $state.go('login');
   });
 
   vm.logout = () => {
     CurrentUserService.removeUser();
+  };
+
+  vm.highlightBackground = () => {
+    var item = document.getElementById('highlightThis');
+    item.className += 'glowing';
   };
 
   $rootScope.$on('$stateChangeSuccess', function () {

@@ -16,6 +16,15 @@
   box-shadow: 0px 0px 200px 12px rgba(255, 255, 255, 0.35);
 }
 
+.glowing {
+  opacity: 1;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.14);
+  transition: opacity 1200ms;
+  box-shadow: 0px 0px 200px 12px rgba(255, 255, 255, 0.35);
+
+}
+
 .button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
   background-color: $black;
   border-color: $black;
