@@ -8,7 +8,7 @@
     <ul>
       <li class="dreamLinks" ng-repeat="dreams in dreamsIndex.dreams">
         <a class="u-full-width button button-primary glow" ui-sref="dreamsShow({id: dreams._id})">{{ dreams.date }}</a>
-        <p>{{ dreams.ratingValue }}</p>
+        <p>Sleep Quality: {{ dreams.ratingValue }}</p>
       </li>
     </ul>
   </div>

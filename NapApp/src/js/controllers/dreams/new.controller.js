@@ -15,7 +15,7 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $s
   vm.entryDate   = vm.day + ' ' + vm.month + ' ' + vm.year;
   vm.fitbitMonth = monthSelector(vm.month);
   vm.showCircles = false;
-  vm.ratingValue = 'zzz';
+  vm.ratingValue = 'Zzz';
 
   vm.dreamsCreate = function dreamsCreate(){
     return Dream
@@ -66,16 +66,16 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $s
           vm.ratingValue = 'z';
         } else if (value <= 4 && value > 2) {
           console.log(id + ' is average' + ' ' + value);
-          vm.ratingValue = 'zz';
+          vm.ratingValue = 'Zz';
         } else if (value > 4 && value <= 6){
           console.log(id + ' is happy' + ' ' + value);
-          vm.ratingValue = 'zzz';
+          vm.ratingValue = 'Zzz';
         } else if (value > 6 && value <= 8){
           console.log(id + ' is happy' + ' ' + value);
-          vm.ratingValue = 'zzzz';
+          vm.ratingValue = 'Zzzz';
         } else if (value > 8 && value <= 10){
           console.log(id + ' is happy' + ' ' + value);
-          vm.ratingValue = 'zzzzz';
+          vm.ratingValue = 'Zzzzz';
         }
       },
       showSelectionBar: false,
@@ -84,7 +84,7 @@ function DreamsNewCtrl($state, User, Dream, CurrentUserService, $auth, $http, $s
       showSelectionBarFromValue: 0
     }
   };
-  
+
   function monthSelector(dates) {
     var months;
     switch (dates) {

@@ -15,7 +15,7 @@ function MainCtrl($rootScope, CurrentUserService, $state, TokenService) {
   });
 
   $rootScope.$on('loggedOut', () => {
-    vm.user    = null;
+    vm.user     = null;
     vm.hasUser = null;
     $state.go('login');
   });
