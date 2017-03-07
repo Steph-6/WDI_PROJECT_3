@@ -2,8 +2,8 @@ angular
   .module('napApp')
   .config(Router);
 
-Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', 'Dream', '$stateParams'];
-function Router($stateProvider, $locationProvider, $urlRouterProvider, Dream, $stateParams){
+Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
+function Router($stateProvider, $locationProvider, $urlRouterProvider){
   $locationProvider.html5Mode(true);
 
   $stateProvider
@@ -59,9 +59,9 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider, Dream, $s
     controller: 'DreamsShowCtrl',
     controllerAs: 'dreamsShow',
     resolve: {
-      DreamData: function(Dream, $stateParams) {
+      DreamData: ['Dream', '$stateParams', function(Dream, $stateParams) {
         return Dream.get($stateParams).$promise;
-      }
+      }]
     }
   })
   ;
