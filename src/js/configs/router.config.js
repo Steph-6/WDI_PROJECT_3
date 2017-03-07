@@ -2,8 +2,8 @@ angular
   .module('napApp')
   .config(Router);
 
-Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
-function Router($stateProvider, $locationProvider, $urlRouterProvider){
+Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', 'Dream', '$stateParams'];
+function Router($stateProvider, $locationProvider, $urlRouterProvider, Dream, $stateParams){
   $locationProvider.html5Mode(true);
 
   $stateProvider
