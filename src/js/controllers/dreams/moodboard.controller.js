@@ -65,7 +65,7 @@ function MoodboardCtrl(ngAudio, $scope) {
   $scope.adjustVolume = adjustVolume;
 
   function adjustVolume(input){
-    $scope.$apply(function($scope) {
+    $scope.$apply(function() {
       var newVolume = Math.round(input.value/50 * 10)/10;
       var sound = document.getElementById('sound' + input.id);
       sound.volume = newVolume;
