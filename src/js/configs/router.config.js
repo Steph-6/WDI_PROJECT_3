@@ -59,9 +59,9 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'DreamsShowCtrl',
     controllerAs: 'dreamsShow',
     resolve: {
-      DreamData: function(Dream, $stateParams) {
+      DreamData: ['Dream', '$stateParams', function(Dream, $stateParams) {
         return Dream.get($stateParams).$promise;
-      }
+      }]
     }
   })
   ;
